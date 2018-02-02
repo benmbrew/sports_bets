@@ -9,15 +9,15 @@ sidebar <- dashboardSidebar(
       tabName="main",
       icon=icon("eye")),
     menuItem(
-      text="youre lost",
+      text="",
       tabName="ki",
       icon=icon("key")),
     menuItem(
-      text="take this cock",
+      text="",
       tabName="basic",
       icon=icon("pencil-square")),
     menuItem(
-      text="anal happens here",
+      text="",
       tabName="advanced",
       icon=icon("keyboard-o")),
     menuItem(
