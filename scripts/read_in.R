@@ -46,7 +46,7 @@ if('processed_survey_data.RData' %in% dir('data')){
   }))
   
   # get over_under fac variable 
-  dat$over_under_fac <- ifelse(is.na(dat$over_under), 'The line', 'Over/under')
+  dat$over_under_fac <- ifelse(is.na(dat$over_under), 'The spread', 'The over under')
   
   # create variable that is indicator of with i bet for underdog or favorie 
   dat$under_dog <- ifelse(dat$line < 0, 'favorite', 
@@ -101,6 +101,6 @@ dat$ben_picks <- Hmisc::capitalize(dat$ben_picks)
 dat$gabe_picks <- Hmisc::capitalize(dat$gabe_picks)
 dat$ben_over_under_team <- Hmisc::capitalize(dat$ben_over_under_team)
 dat$gabe_over_under_team <- Hmisc::capitalize(dat$gabe_over_under_team)
+dat$under_dog <- Hmisc::capitalize(dat$under_dog)
 
 
-# line and ou choices 
