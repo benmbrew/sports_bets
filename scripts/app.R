@@ -82,18 +82,17 @@ ui <- dashboardPage(skin = 'red',
                                          column(4,
                                                 uiOutput('line_or_ou'))),
                                 fluidRow(column(12,
-                                                uiOutput('over_under_picks'))),
+                                                uiOutput('over_under_picks')),
+                                         fluidRow(column(4,
+                                                         uiOutput('ben_box')),
+                                                  column(4,
+                                                         uiOutput('gabe_box')),
+                                                  column(4,
+                                                         uiOutput('both_box'))
+                                                 
+                                         )),
                                 tabsetPanel(
                                   tabPanel('Table',
-                                           fluidRow(column(3,
-                                                           uiOutput('box_money')),
-                                                    column(3,
-                                                           uiOutput('box_record')),
-                                                    column(3,
-                                                           uiOutput('box_avg_bet')),
-                                                    column(3,
-                                                           uiOutput('box_underdog'))
-                                                    ),
                                            fluidRow(column(12,
                                                            DT::dataTableOutput('nba_table')))
                                            ),
@@ -118,12 +117,12 @@ server <- function(input, output) {
       sliderInput("ou_range", "The over under",
                   min = 180, 
                   max = 250,
-                  value = c(190,230))
+                  value = c(185,235))
     } else if(input$type_of_bet == 'The spread'){
       sliderInput("spread_range", "The spread",
-                  min = -20, 
-                  max = 20,
-                  value = c(-10,10))
+                  min = -25, 
+                  max = 25,
+                  value = c(-20,20))
     }
     
   })
@@ -131,9 +130,9 @@ server <- function(input, output) {
   # get data for dates speccified
   get_sliders <- reactive({
     
-    type_of_bet <- 'The spread'
-    slider_input <- c(150, 300)
-    date_picker <- c("2015-10-17", "2018-03-17")
+    type_of_bet <- 'The over under'
+    slider_input <- c(150, 250)
+    date_picker <- c("2015-10-17", "2018-05-07")
     
     # get slider range
     if(input$type_of_bet == 'The spread') {
@@ -181,10 +180,9 @@ server <- function(input, output) {
   # create reactive object that takes 4 inputs and returns the appropriate data set
   get_data_over_under <- reactive({
     
-    ou_picks <- input$ou_picks
     x <- get_sliders()
     
-    if(is.null(ou_picks) | is.null(x)) {
+    if(is.null(x)) {
       NULL
     } else {
       x <- x %>% filter(over_under_fac == 'The over under')
@@ -195,8 +193,7 @@ server <- function(input, output) {
                        "The spread/OU", 'Result', 'Money result', 'Cumulative winngings')
       
       
-      x <- x[x$`Ben's over/under picks` == ou_picks,]
-      
+
       
       
       return(x)
@@ -207,32 +204,102 @@ server <- function(input, output) {
   
   
 
-  # create output obect for line_or_ou
-  output$over_under_picks<- renderUI({
-    
-    if(input$type_of_bet == 'The over under'){
-      selectInput("ou_picks", 
-                  "Ben's choice",
-                  choices = c('Over', 'Under'))
-    } else {
-      NULL
-    }
-    
-  })
-  
+  # # create output obect for line_or_ou
+  # output$over_under_picks<- renderUI({
+  #   
+  #   if(input$type_of_bet == 'The over under'){
+  #     selectInput("ou_picks", 
+  #                 "Ben's choice",
+  #                 choices = c('Over', 'Under'))
+  #   } else {
+  #     NULL
+  #   }
+  #   
+  # })
+  # 
 
-  # HERE - total_money, total_spread, total_over_under
-  output$box_money <- renderUI({
+  # HERE Make sure this can be transferred to gab e box
+  output$ben_box <- renderUI({
     
 
-    # type_of_bet <- 'The over under'
-    # ben_team <- 'All'
-    # gabe_team <- 'All'
+    type_of_bet <- 'The over under'
+    ben_team <- 'All'
     # temp_data <- x
     # get inputs
     type_of_bet <- input$type_of_bet
     ben_team <- input$ben_picks
-    gabe_team <-input$gabe_picks
+
+    # filter type of bet input
+    if (type_of_bet == 'The spread'){
+      temp_data <- get_data_line()
+    } else if(type_of_bet =='The over under'){
+      temp_data <- get_data_over_under()
+    }
+    
+    if(is.null(type_of_bet) | is.null(ben_team) | is.null(temp_data)) {
+      NULL
+    } else {
+      if (ben_team != 'All'){
+        temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team)
+        
+      } 
+      
+      # criteria of under dog of over under 
+      if(type_of_bet != 'The over under'){
+        sum_under_dog_or_under <- nrow(temp_data[temp_data$`Ben's team` == 'Under dog',])
+        under_dog_under_text <-'# of underdog bets: '
+        
+      }else {
+        sum_under_dog_or_under <- nrow(temp_data[temp_data$`Ben's over/under picks` == 'Under',])
+        under_dog_under_text <-'# of bets on the under: '
+        
+      }
+      
+      total_winnings <- sum(temp_data$`Money result`)
+      if(total_winnings < 0){
+        total_string <- 'Net Losses'
+        mean_string <- 'Average losses per bet'
+      } else{
+        total_string <- 'Net winnings'
+        mean_string <- 'Average winnings per bet'
+        
+      }
+      #edit type of bet
+      type_of_bet <- unlist(strsplit(type_of_bet, ' ',fixed = TRUE))[2]
+      
+      mean_line_ou <- round(mean(temp_data$`The spread/OU`, na.rm = TRUE),2)
+      total_w <- nrow(temp_data[temp_data$Result == 'W',])
+      total_l <- nrow(temp_data[temp_data$Result == 'L',])
+      total_games <- total_w + total_l
+      mean_winnings<- round(mean(temp_data$`Money result`, na.rm = TRUE), 2)
+    
+      
+      valueBox(
+        paste0("Ben's stats"), 
+        HTML(paste0("Average ", type_of_bet, " : ", mean_line_ou,
+                    "<br/> Team chosen: ", ben_team,
+                    "<br/> Games played: ", total_games,
+                    "<br/> Wins: ", total_w,
+                    "<br/> Losses: ", total_l,
+                    "<br/>", total_string, ": ", total_winnings,' $',
+                    "<br/>", mean_string, ": ", mean_winnings,' $',
+                    "<br/>", under_dog_under_text,  sum_under_dog_or_under)), 
+        color = 'olive',
+        width = 10
+      )
+    
+    }
+  })
+  
+  output$gabe_box <- renderUI({
+    
+    
+    type_of_bet <- 'The over under'
+    gabe_team <- 'All'
+    # temp_data <- x
+    # get inputs
+    type_of_bet <- input$type_of_bet
+    gabe_team <- input$gabe_picks
     
     # filter type of bet input
     if (type_of_bet == 'The spread'){
@@ -241,34 +308,59 @@ server <- function(input, output) {
       temp_data <- get_data_over_under()
     }
     
-    if(is.null(type_of_bet) | is.null(ben_team) | is.null(gabe_team) | is.null(temp_data)) {
+    if(is.null(type_of_bet) | is.null(gabe_team) | is.null(temp_data)) {
       NULL
     } else {
-     
-      
-      if (ben_team == 'All' & gabe_team == 'All'){
-        temp_data < temp_data
-      } else if (ben_team == 'All' & gabe_team != 'All') {
+      if (gabe_team != 'All'){
         temp_data <- temp_data %>% filter(`Gabe's picks` %in% gabe_team)
-      } else if (ben_team != 'All' & gabe_team == 'All') {
-        temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team)
-      } else {
-        temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team) %>% filter(`Gabe's picks` %in% gabe_team)
+        
+      } 
+      
+      # criteria of under dog of over under 
+      if(type_of_bet != 'The over under'){
+        sum_under_dog_or_under <- nrow(temp_data[temp_data$`Ben's team` != 'Under dog',])
+        under_dog_under_text <-'# of underdog bets: '
+        
+      }else {
+        sum_under_dog_or_under <- nrow(temp_data[temp_data$`Ben's over/under picks` != 'Under',])
+        under_dog_under_text <-'# of bets on the under: '
+        
       }
       
+      total_winnings <- sum(temp_data$`Money result`)
+      if(total_winnings < 0){
+        total_string <- 'Net Losses'
+        mean_string <- 'Average losses per bet'
+      } else{
+        total_string <- 'Net winnings'
+        mean_string <- 'Average winnings per bet'
+        
+      }
+      #edit type of bet
+      type_of_bet <- unlist(strsplit(type_of_bet, ' ',fixed = TRUE))[2]
       
-      total_money <- sum(temp_data$`Money result`, na.rm = TRUE)
+      mean_line_ou <- round(mean(temp_data$`The spread/OU`, na.rm = TRUE),2)
+      total_w <- nrow(temp_data[temp_data$Result == 'W',])
+      total_l <- nrow(temp_data[temp_data$Result == 'L',])
+      total_games <- total_w + total_l
+      mean_winnings<- round(mean(temp_data$`Money result`, na.rm = TRUE), 2)
+      
       
       valueBox(
-        paste0('Winnings'), 
-        paste0(total_money, ' $'), 
+        paste0("gabe's stats"), 
+        HTML(paste0("Average ", type_of_bet, " : ", mean_line_ou,
+                    "<br/> Team chosen: ", gabe_team,
+                    "<br/> Games played: ", total_games,
+                    "<br/> Wins: ", total_w,
+                    "<br/> Losses: ", total_l,
+                    "<br/>", total_string, ": ", total_winnings,' $',
+                    "<br/>", mean_string, ": ", mean_winnings,' $',
+                    "<br/>", under_dog_under_text,  sum_under_dog_or_under)), 
         color = 'olive',
         width = 10
       )
+      
     }
-    
-    
-    
   })
   
 
@@ -289,10 +381,10 @@ server <- function(input, output) {
   # 
   output$nba_table <- renderDataTable({
     
-    type_of_bet <- 'The over under'
+    type_of_bet <- 'The spread'
     ben_team <- 'All'
     gabe_team <- 'All'
-    # temp_data <- x
+    temp_data <- x
     # get inputs
     type_of_bet <- input$type_of_bet
     ben_team <- input$ben_picks

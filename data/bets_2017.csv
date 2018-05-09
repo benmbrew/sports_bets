@@ -124,7 +124,7 @@ date,person ,risk,potential,ben_bet,gabe_bet,ben_line,outcome,money_outcome,over
 10/1/2017,gabe,20,20,chiefs,redskins,-7,W,20,NA,nfl,yes
 10/16/2017,gabe,50,50,titans,colts,-7,W,50,NA,nfl,yes
 10/17/2017,gabe,40,40,houston,golden_state,9,W,40,NA,nba,yes
-10/17/2017,gabe,40,40,boston,cleveland,3.5,W,40,NA,nba,yes
+10/17/2017,gabe,40,40,celtics,cleveland,3.5,W,40,NA,nba,yes
 10/17/2017,gabe,40,40,houston,memphis,-3,L,-40,NA,cfb,yes
 10/17/2017,gabe,40,40,syracuse,miami,16.5,W,40,NA,cfb,yes
 10/17/2017,gabe,40,40,georgia_tech,wake_forest,-6.5,W,40,NA,cfb,yes
@@ -556,7 +556,7 @@ date,person ,risk,potential,ben_bet,gabe_bet,ben_line,outcome,money_outcome,over
 1/5/2018,gabe,40,40,hornets,lakers,-2,W,40,,nba,yes
 1/7/2018,gabe,40,40,knicks,mavs,5,W,40,,nba,yes
 1/7/2018,gabe,40,40,thunder,suns,-8.5,L,-40,,nba,yes
-1/7/2018,gabe,40,40,spurs,portland,2.5,W,40,,nba,yes
+1/7/2018,gabe,40,40,spurs,trailblazers,2.5,W,40,,nba,yes
 1/7/2018,gabe,40,40,lakers,hawks,-3,W,40,,nba,yes
 1/8/2018,gabe,50,50,alabama,georgia,-4,L,-50,,cfb,yes
 1/8/2018,gabe,50,50,under,over,44,L,-50,,cfb,yes
@@ -572,7 +572,7 @@ date,person ,risk,potential,ben_bet,gabe_bet,ben_line,outcome,money_outcome,over
 1/9/2018,gabe,40,40,trailblazers,thunder,8,W,40,,nba,yes
 1/9/2018,gabe,40,40,magic,mavs,7,L,-40,,nba,yes
 1/9/2018,gabe,40,40,kings,lakers,6.5,L,-40,,nba,yes
-1/10/2018,gabe,40,40,cavs,raptors,16.5,L,-40,half_time_bet,nba,yes
+1/10/2018,gabe,40,40,cavs,raptors,16.5,L,-40,cavs_raptors,nba,yes
 1/12/2018,gabe,50,50,falcons,eagles,-2.5,L,-50,,nfl,yes
 1/12/2018,gabe,50,50,over,under,40,W,50,falcons_eagles,nfl,yes
 1/12/2018,gabe,50,50,titans,pats,13.5,L,-50,,nfl,yes
@@ -699,7 +699,7 @@ date,person ,risk,potential,ben_bet,gabe_bet,ben_line,outcome,money_outcome,over
 1/26/2018,gabe,40,40,under,over,217.5,W,40,knicks_suns,nba,yes
 1/27/2018,gabe,40,40,thunder,pistons,-3.5,W,40,,nba,yes
 1/27/2018,gabe,40,40,over,under,207.5,W,40,thunder_pistons,nba,yes
-1/27/2018,gabe,40,40,</p>,pacers,6,W,40,,nba,yes
+1/27/2018,gabe,40,40,magic,pacers,6,W,40,,nba,yes
 1/27/2018,gabe,40,40,under,over,213,L,-40,magic_pacers,nba,yes
 1/27/2018,gabe,40,40,wizards,hawks,-3.5,W,40,,nba,yes
 1/27/2018,gabe,40,40,under,over,211,L,-40,wizards_hawks,nba,yes
@@ -830,7 +830,7 @@ date,person ,risk,potential,ben_bet,gabe_bet,ben_line,outcome,money_outcome,over
 2/5/2018,gabe,40,40,nuggets,hornets,-6,W,40,,nba,yes
 2/5/2018,gabe,40,40,under,over,219,L,-40,nuggets_hornets,nba,yes
 2/5/2018,gabe,40,40,bulls,kings,2.5,L,-40,,nba,yes
-2/5/2018,gabe,40,40,under,over,211.5,W,40,bulls_vikings,nba,yes
+2/5/2018,gabe,40,40,under,over,211.5,W,40,bulls_kings,nba,yes
 2/5/2018,gabe,40,40,clippers,mavs,-6.5,L,-40,,nba,yes
 2/5/2018,gabe,40,40,under,over,214.5,W,40,clippers_mavs,nba,yes
 2/6/2018,gabe,40,40,cavs,magic,-6.5,L,-40,,nba,yes
@@ -955,333 +955,679 @@ date,person ,risk,potential,ben_bet,gabe_bet,ben_line,outcome,money_outcome,over
 2/25/2018,gabe,40,40,over,under,225,W,40,nuggets_rockets,nba,yes
 2/25/2018,gabe,40,40,76ers,wizards,1.5,L,-40,,nba,yes
 2/25/2018,gabe,40,40,over,under,213.5,L,-40,76ers_wizards,nba,yes
-2/26/2018,gabe,40,40,pistons,raptors,10.5,L,-40,,nba,
-2/26/2018,gabe,44,40,under,over,217.5,W,40,pistons_raptors,nba,
-2/26/2018,gabe,40,40,bulls,nets,5,L,-40,,nba,
-2/26/2018,gabe,44,40,under,over,216.5,W,40,bulls_nets,nba,
-2/26/2018,gabe,40,40,celtics,grizzlies,-12,L,-40,,nba,
-2/26/2018,gabe,44,40,over,under,204,W,40,celtics_grizzlies,nba,
-2/26/2018,gabe,40,40,lakers,hawks,-2,W,40,,nba,
-2/26/2018,gabe,44,40,under,over,221,L,-44,lakers_hawks,nba,
-2/26/2018,gabe,40,40,warriors,knicks,-12,W,40,,nba,
-2/26/2018,gabe,44,40,under,over,227,L,-44,warriors_knicks,nba,
-2/26/2018,gabe,40,40,pelicans,suns,-7.5,W,40,,nba,
-2/26/2018,gabe,44,40,under,over,235.5,L,-44,pelicans_suns,nba,
-2/26/2018,gabe,40,40,magic,thunder,10.5,W,40,,nba,
-2/26/2018,gabe,44,40,under,over,218,W,40,magic_thunder,nba,
-2/26/2018,gabe,40,40,pacers,mavs,-3,L,-40,,nba,
-2/26/2018,gabe,44,40,under,over,210,L,-44,pacers_mavs,nba,
-2/26/2018,gabe,40,40,rockets,jazz,-2,W,40,,nba,
-2/26/2018,gabe,44,40,under,over,211.5,W,40,rockets_jazz,nba,
-2/26/2018,gabe,40,40,kings,timberwolves,5.5,L,-40,,nba,
-2/26/2018,gabe,44,40,under,over,216.5,L,-44,kings_timberwolves,nba,
-2/27/2018,gabe,40,40,bulls,hornets,11,L,-40,,nba,
-2/27/2018,gabe,44,40,under,over,218.5,L,-44,bulls_hornets,nba,
-2/27/2018,gabe,40,40,cavs,nets,-10,L,-40,,nba,
-2/27/2018,gabe,44,40,under,over,222,L,-44,cavs_nets,nba,
-2/27/2018,gabe,40,40,76ers,heat,1,P,0,,nba,
-2/27/2018,gabe,44,40,over,under,205,L,-40,76ers_heat,nba,
-2/27/2018,gabe,40,40,bucks,wizards,-3,L,-40,,nba,
-2/27/2018,gabe,44,40,over,under,212,L,-40,bucks_wizards,nba,
-2/27/2018,gabe,40,40,trailblazers,kings,-12,W,40,,nba,
-2/27/2018,gabe,44,40,under,over,208.5,L,-44,trailblazers_kings,nba,
-2/27/2018,gabe,40,40,nuggets,clippers,-5,L,-40,,nba,
-2/27/2018,gabe,44,40,under,over,230,L,-44,nuggets_clippers,nba,
-2/28/2018,gabe,40,40,pistons,bucks,-1.5,W,40,,nba,
-2/28/2018,gabe,44,40,under,over,208,W,40,pistons_bucks,nba,
-2/28/2018,gabe,40,40,magic,raptors,9.5,L,-40,,nba,
-2/28/2018,gabe,44,40,under,over,222,W,40,magic_raptors,nba,
-2/28/2018,gabe,40,40,pacers,hawks,-5,L,-40,,nba,
-2/28/2018,gabe,44,40,under,over,214,W,40,pacers_hawks,nba,
-2/28/2018,gabe,40,40,celtics,hornets,-7.5,W,40,,nba,
-2/28/2018,gabe,44,40,under,over,208.5,L,-44,celtics_hornets,nba,
-2/28/2018,gabe,40,40,grizzlies,suns,-1.5,L,-40,,nba,
-2/28/2018,gabe,44,40,under,over,216,W,40,grizzlies_suns,nba,
-2/28/2018,gabe,40,40,warriors,wizards,-8.5,L,-40,,nba,
-2/28/2018,gabe,44,40,under,over,225.5,W,40,warriors_wizards,nba,
-2/28/2018,gabe,40,40,spurs,pelicans,-5,L,-40,,nba,
-2/28/2018,gabe,44,40,under,over,218.5,L,-44,spurs_pelicans,nba,
-2/28/2018,gabe,40,40,thunder,mavs,-5,L,-40,,nba,
-2/28/2018,gabe,44,40,under,over,211,L,-44,thunder_mavs,nba,
-2/28/2018,gabe,40,40,clippers,rockets,8,L,-40,,nba,
-2/28/2018,gabe,44,40,under,over,226.5,W,40,clippers_rockets,nba,
-3/1/2018,gabe,40,40,heat,lakers,-5,L,-40,,nba,
-3/1/2018,gabe,44,40,under,over,216.5,L,-44,heat_lakers,nba,
-3/1/2018,gabe,40,40,cavs,76ers,-2.5,L,-40,,nba,
-3/1/2018,gabe,44,40,under,over,223,W,40,cavs_76ers,nba,
-3/1/2018,gabe,40,40,kings,nets,2.5,W,40,,nba,
-3/1/2018,gabe,44,40,under,over,213,L,-44,kings_nets,nba,
-3/1/2018,gabe,40,40,trailblazers,timberwolves,-5,W,40,,nba,
-3/1/2018,gabe,40,40,over,under,217.5,L,-40,trailblazers_timberwolves,nba,
-3/2/2018,gabe,40,40,magic,pistons,3,W,40,,nba,
-3/2/2018,gabe,44,40,under,over,214,L,-44,magic_pisons,nba,
-3/2/2018,gabe,40,40,76ers,hornets,-3.5,W,40,,nba,
-3/2/2018,gabe,44,40,under,over,214,W,40,76ers_hornets,nba,
-3/2/2018,gabe,40,40,warriors,hawks,-13,L,-40,,nba,
-3/2/2018,gabe,44,40,under,over,226,W,40,warriors_hawks,nba,
-3/2/2018,gabe,40,40,bulls,mavs,2,W,40,,nba,
-3/2/2018,gabe,44,40,under,over,214,W,40,bulls_mavs,nba,
-3/2/2018,gabe,40,40,nuggets,grizzlies,-7.5,L,-40,,nba,
-3/2/2018,gabe,44,40,under,over,213.5,W,40,nuggets_grizzlies,nba,
-3/2/2018,gabe,40,40,raptors,wizards,-4,W,40,,nba,
-3/2/2018,gabe,40,40,over,under,217,L,-40,raptors_wizards,nba,
-3/2/2018,gabe,40,40,bucks,pacers,-3.5,L,-40,,nba,
-3/2/2018,gabe,44,40,under,over,210.5,W,40,bucks_pacers,nba,
-3/2/2018,gabe,40,40,thunder,suns,-7.5,W,40,,nba,
-3/2/2018,gabe,44,40,under,over,226.5,L,-44,thunder_suns,nba,
-3/2/2018,gabe,40,40,jazz,timberwolves,-7,W,40,,nba,
-3/2/2018,gabe,44,40,under,over,208,L,-44,jazz_timberwolves,nba,
-3/2/2018,gabe,40,40,knicks,clippers,8.5,L,-40,,nba,
-3/2/2018,gabe,44,40,under,over,226.5,L,-44,knicks_clippers,nba,
-3/3/2018,gabe,40,40,grizzlies,magic,6.5,L,-40,,nba,
-3/3/2018,gabe,44,40,under,over,211,W,40,grizzlies_magic,nba,
-3/3/2018,gabe,40,40,pistons,heat,5.5,L,-40,,nba,
-3/3/2018,gabe,40,40,over,under,203.5,L,-40,pistons_heat,nba,
-3/3/2018,gabe,40,40,rockets,celtics,-8.5,L,-40,,nba,
-3/3/2018,gabe,40,40,under,over,213,L,-44,rockets_celtics,nba,
-3/3/2018,gabe,40,40,spurs,lakers,-5.5,L,-40,,nba,
-3/3/2018,gabe,44,40,under,over,218,L,-44,spurs_lakers,nba,
-3/3/2018,gabe,40,40,kings,jazz,7.5,W,40,,nba,
-3/3/2018,gabe,44,40,under,over,202,W,40,kings_jazz,nba,
-3/3/2018,gabe,40,40,thunder,trailblazers,5.5,L,-40,,nba,
-3/3/2018,gabe,44,40,over,under,214.5,L,-40,thunder_trailblazers,nba,
-3/3/2018,gabe,40,40,cavs,nuggets,-4.5,L,-40,,nba,
-3/3/2018,gabe,40,40,over,under,228.5,W,40,cavs_nuggets,nba,
-3/4/2018,gabe,40,40,purdue,michigan,-4.5,L,-40,,cbb,
-3/5/2018,gabe,40,40,cavs,pistons,-6,W,40,,nba,
-3/5/2018,gabe,44,40,under,over,218.5,W,40,cavs_pistons,nba,
-3/5/2018,gabe,40,40,pacers,bucks,-2.5,W,40,,nba,
-3/5/2018,gabe,44,40,under,over,208,W,40,pacers_bucks,nba,
-3/5/2018,gabe,40,40,suns,heat,9,L,-40,,nba,
-3/5/2018,gabe,44,40,under,over,216.5,L,-44,suns_heat,nba,
-3/5/2018,gabe,40,40,bulls,celtics,8.5,L,-40,,nba,
-3/5/2018,gabe,44,40,under,over,214.5,W,40,bulls_celtics,nba,
-3/5/2018,gabe,40,40,spurs,grizzlies,-11,L,-40,,nba,
-3/5/2018,gabe,44,40,under,over,201.5,W,40,spurs_grizzlies,nba,
-3/5/2018,gabe,40,40,magic,jazz,10,L,-40,,nba,
-3/5/2018,gabe,44,40,under,over,207,W,40,magic_jazz,nba,
-3/5/2018,gabe,40,40,trailblazers,lakers,-2,W,40,,nba,
-3/5/2018,gabe,44,40,under,over,224.5,W,40,trailblazers_lakers,nba,
-3/7/2018,gabe,40,40,bulls,grizzlies,-3.5,W,40,,nba,
-3/7/2018,gabe,44,40,under,over,211.5,L,-44,bulls_grizzlies,nba,
-3/7/2018,gabe,40,40,bucks,rockets,5.5,L,-40,,nba,
-3/7/2018,gabe,44,40,under,over,214,W,40,bucks_rockets,nba,
-3/7/2018,gabe,40,40,raptors,pistons,-5.5,L,-40,,nba,
-3/7/2018,gabe,44,40,under,over,214,L,-44,raptors_pistons,nba,
-3/7/2018,gabe,40,40,pelicans,kings,-5.5,W,40,,nba,
-3/7/2018,gabe,44,40,under,over,223.5,W,40,pelicans_kings,nba,
-3/7/2018,gabe,40,40,cavs,nuggets,3.5,W,40,,nba,
-3/7/2018,gabe,44,40,under,over,229,W,40,cavs_nuggets,nba,
-3/7/2018,gabe,40,40,magic,lakers,6.5,W,40,,nba,
-3/7/2018,gabe,44,40,under,over,225,W,40,magic_lakers,nba,
-3/8/2018,gabe,40,40,pacers,hawks,-8.5,W,40,,nba,
-3/8/2018,gabe,44,40,under,over,209.5,W,40,pacers_hawks,nba,
-3/8/2018,gabe,40,40,pistons,bulls,-8,W,40,,nba,
-3/8/2018,gabe,44,40,under,over,212.5,W,40,pistons_bulls,nba,
-3/8/2018,gabe,40,40,rockets,raptors,-2.5,L,-40,,nba,
-3/8/2018,gabe,44,40,over,under,220.5,L,-40,rockets_raptors,nba,
-3/8/2018,gabe,40,40,bucks,knicks,-10,L,-40,,nba,
-3/8/2018,gabe,44,40,under,over,212.5,L,-44,bucks_knicks,nba,
-3/8/2018,gabe,40,40,grizzlies,jazz,9,L,-40,,nba,
-3/8/2018,gabe,44,40,over,under,197.5,L,-40,grizzlies_jazz,nba,
-3/8/2018,gabe,40,40,pelicans,wizards,3.5,L,-40,,nba,
-3/8/2018,gabe,44,40,under,over,220,W,40,pelicans_wizards,nba,
-3/8/2018,gabe,40,40,nuggets,lakers,-6.5,W,40,,nba,
-3/8/2018,gabe,44,40,under,over,229.5,L,-44,nuggets_lakers,nba,
-3/8/2018,gabe,40,40,warriors,trailblazers,-1.5,L,-40,,nba,
-3/8/2018,gabe,44,40,over,under,222.5,W,40,warriors_trailblazers,nba,
-3/8/2018,gabe,40,40,magic,kings,4,L,-40,,nba,
-3/8/2018,gabe,44,40,under,over,210,W,40,magic_kings,nba,
-3/8/2018,gabe,40,40,cavs,clippers,1.5,L,-40,,nba,
-3/8/2018,gabe,44,40,under,over,229.5,W,40,cavs_clippers,nba,
-3/8/2018,gabe,40,40,florida,arkansas,-4,L,-40,,cbb,
-3/8/2018,gabe,40,40,over,under,144.5,W,40,florida_arkansas,cbb,
-3/10/2018,gabe,40,40,wizards,heat,5,L,-40,,nba,
-3/10/2018,gabe,44,40,under,over,205.5,L,-44,wizards_heat,nba,
-3/10/2018,gabe,40,40,thunder,spurs,-4.5,W,40,,nba,
-3/10/2018,gabe,44,40,under,over,211,W,40,thunder_spurs,nba,
-3/10/2018,gabe,40,40,grizzlies,mavs,8.5,L,-40,,nba,
-3/10/2018,gabe,44,40,under,over,208,W,40,grizzlies_mavs,nba,
-3/10/2018,gabe,40,40,magic,clippers,11.5,W,40,,nba,
-3/10/2018,gabe,44,40,under,over,216.5,L,-44,magic_clippers,nba,
-3/11/2018,gabe,40,40,knicks,raptors,9.5,L,-40,,nba,
-3/11/2018,gabe,44,40,under,over,217,L,-44,knicks_raptors,nba,
-3/11/2018,gabe,40,40,bulls,hawks,2.5,W,40,,nba,
-3/11/2018,gabe,44,40,under,over,214.5,L,-44,bulls_hawks,nba,
-3/11/2018,gabe,40,40,warriors,timberwolves,-4.5,L,-40,,nba,
-3/11/2018,gabe,40,40,over,under,225.5,L,-40,warriors_timberwolves,nba,
-3/11/2018,gabe,40,40,pelicans,jazz,2.5,L,-40,,nba,
-3/11/2018,gabe,44,40,under,over,213,L,-44,pelicans_jazz,nba,
-3/11/2018,gabe,40,40,nuggets,kings,-11.5,W,40,,nba,
-3/11/2018,gabe,44,40,under,over,217,L,-44,nuggets_kings,nba,
-3/11/2018,gabe,40,40,rockets,mavs,-9.5,W,40,,nba,
-3/11/2018,gabe,44,40,under,over,211.5,W,40,rockets_mavs,nba,
-3/11/2018,gabe,40,40,pacers,celtics,6.5,W,40,,nba,
-3/11/2018,gabe,44,40,under,over,207.5,W,40,pacers_celtics,nba,
-3/11/2018,gabe,40,40,76ers,nets,6,L,-40,,nba,
-3/11/2018,gabe,44,40,under,over,217.5,W,40,76ers_nets,nba,
-3/11/2018,gabe,40,40,cavs,lakers,-2,L,-40,,nba,
-3/11/2018,gabe,44,40,under,over,228.5,L,-44,cavs_lakers,nba,
-3/14/2018,gabe,40,40,magic,bucks,9,W,40,,nba,
-3/14/2018,gabe,42,40,under,over,208,L,-42,magic_bucks,nba,
-3/14/2018,gabe,40,40,wizards,celtics,-3.5,L,-40,,nba,
-3/14/2018,gabe,42,40,under,over,203,L,-42,wizards_celtics,nba,
-3/14/2018,gabe,40,40,kings,heat,7,W,40,,nba,
-3/14/2018,gabe,42,40,under,over,207,L,-42,kings_heat,nba,
-3/14/2018,gabe,40,40,warriors,lakers,-6.5,W,40,,nba,
-3/14/2018,gabe,42,40,under,over,224.5,W,40,warriors_lakers,nba,
-3/15/2018,gabe,200,200,bracket,bracket,ncca_tourney,,,,cbb,
-3/15/2018,gabe,40,40,raptors,pacers,-4,W,40,,nba,
-3/15/2018,gabe,42,40,under,over,212.5,W,40,raptors_pacers,nba,
-3/15/2018,gabe,40,40,hornets,hawks,-5.5,W,40,,nba,
-3/15/2018,gabe,42,40,under,over,219.5,L,-42,hornets_hawks,nba,
-3/15/2018,gabe,40,40,knicks,76ers,9.5,W,40,,nba,
-3/15/2018,gabe,42,40,under,over,216.5,L,-42,knicks_76ers,nba,
-3/15/2018,gabe,40,40,rockets,clippers,-11.5,L,-40,,nba,
-3/15/2018,gabe,42,40,under,over,223.5,W,40,rockets_clippers,nba,
-3/15/2018,gabe,40,40,bulls,grizzlies,1,W,40,,nba,
-3/15/2018,gabe,42,40,under,over,211.5,L,-42,bulls_grizzlies,nba,
-3/15/2018,gabe,40,40,spurs,pelicans,-4.5,W,40,,nba,
-3/15/2018,gabe,42,40,under,over,219,W,40,spurs_pelicans,nba,
-3/15/2018,gabe,40,40,suns,jazz,13.5,L,-40,,nba,
-3/15/2018,gabe,42,40,under,over,213,W,40,suns_jazz,nba,
-3/15/2018,gabe,40,40,pistons,nuggets,8.5,W,40,,nba,
-3/15/2018,gabe,42,40,under,over,220,L,-42,pistons_nuggets,nba,
-3/15/2018,gabe,40,40,villanova,radford,-23,W,40,,cbb,
-3/15/2018,gabe,40,40,over,under,138.5,W,40,villanova_radford,cbb,
-3/15/2018,gabe,40,40,virginia tech,alabama,-2.5,L,-40,,cbb,
-3/15/2018,gabe,42,40,under,over,141,L,-42,virginia tech_alabama,cbb,
-3/15/2018,gabe,40,40,seton hall,nc state,-3,W,40,,cbb,
-3/15/2018,gabe,42,40,under,over,158.5,L,-42,seton hall_nc state,cbb,
-3/15/2018,gabe,40,40,michigan,montana,-10,W,40,,cbb,
-3/15/2018,gabe,40,40,over,under,134,L,-42,michigan_montana,cbb,
-3/15/2018,gabe,40,40,davidson,kentucky,4.5,L,-40,,cbb,
-3/15/2018,gabe,40,40,over,under,142.5,W,40,davidson_kentucky,cbb,
-3/15/2018,gabe,40,40,arizona,buffalo,-8,L,-40,,cbb,
-3/15/2018,gabe,42,40,under,over,158.5,W,40,arizona_buffalo,cbb,
-3/15/2018,gabe,40,40,florida,st bonaventure,-5.5,W,40,,cbb,
-3/15/2018,gabe,40,40,over,under,143,L,-40,florida_st bonaventure,cbb,
-3/16/2018,gabe,40,40,magic,celtics,6.5,L,-40,,nba,
-3/16/2018,gabe,42,40,under,over,203.5,W,40,magic_celtics,nba,
-3/16/2018,gabe,40,40,76ers,nets,-8.5,L,-40,,nba,
-3/16/2018,gabe,42,40,under,over,217.5,L,-42,76ers_nets,nba,
-3/16/2018,gabe,40,40,mavs,raptors,10.5,W,40,,nba,
-3/16/2018,gabe,42,40,under,over,211,L,-42,mavs_raptors,nba,
-3/16/2018,gabe,40,40,thunder,clippers,-4.5,W,40,,nba,
-3/16/2018,gabe,42,40,under,over,223,L,-42,thunder_clippers,nba,
-3/16/2018,gabe,40,40,warriors,kings,-10,L,-40,,nba,
-3/16/2018,gabe,42,40,under,over,210,W,40,warriors_kings,nba,
-3/16/2018,gabe,40,40,lakers,heat,-4,L,-40,,nba,
-3/16/2018,gabe,42,40,under,over,220,W,40,lakers_heat,nba,
-3/16/2018,gabe,40,40,texas am,providence,-3,W,40,,cbb,
-3/16/2018,gabe,40,40,over,under,138.5,W,40,texas am_providence,cbb,
-3/16/2018,gabe,40,40,purdue,cs fullerton,-20,W,40,,cbb,
-3/16/2018,gabe,42,40,under,over,144.5,W,40,purdue_cs fullerton,cbb,
-3/16/2018,gabe,40,40,marshall,witchita state,12.5,W,40,,cbb,
-3/16/2018,gabe,42,40,under,over,167.5,W,40,marshall_witchita state,cbb,
-3/16/2018,gabe,40,40,cincinnati,georgia state,-13.5,W,40,,cbb,
-3/16/2018,gabe,42,40,under,over,130.5,W,40,cinncinnati_georgia state,cbb,
-3/16/2018,gabe,40,40,north_caronlina,libscomb,-20.5,L,-40,,cbb,
-3/16/2018,gabe,42,40,under,over,162.5,W,40,north carolina_libscomb,cbb,
-3/16/2018,gabe,40,40,butler,arkansas,-1.5,W,40,,cbb,
-3/16/2018,gabe,40,40,over,under,150.5,L,-40,butler_arkansas,cbb,
-3/16/2018,gabe,40,40,murray_state,west_virginia,10,L,-40,,cbb,
-3/16/2018,gabe,40,40,over,under,145.5,W,40,murray state_west virginia,cbb,
-3/16/2018,gabe,40,40,nevada,texas,1,W,40,,cbb,
-3/16/2018,gabe,40,40,over,under,143.5,W,40,nevad_texas,cbb,
-3/16/2018,gabe,40,40,kansas state,creighton,1,W,40,,cbb,
-3/16/2018,gabe,42,40,under,over,144.5,W,40,kansas state_creighton,cbb,
-3/16/2018,gabe,40,40,bucknell,michigan state,13.5,W,40,,cbb,
-3/16/2018,gabe,42,40,under,over,150,L,-42,bucknell_michigan state,cbb,
-3/16/2018,gabe,40,40,xavier,texas southern,-18.5,W,40,,cbb,
-3/16/2018,gabe,42,40,under,over,160.5,L,-42,xavier_texas southern,cbb,
-3/16/2018,gabe,40,40,college charleston,auburn,9.5,W,40,,cbb,
-3/16/2018,gabe,42,40,under,over,148,W,40,college charleston_auburn,cbb,
-3/16/2018,gabe,40,40,virginia,umbc,-20,L,-40,,cbb,
-3/16/2018,gabe,40,40,over,under,120.5,W,40,virginia_umbc,cbb,
-3/16/2018,gabe,40,40,syracuse,texas christian,4.5,W,40,,cbb,
-3/16/2018,gabe,40,40,over,under,136.5,L,-40,syracuse_texas christian,cbb,
-3/16/2018,gabe,40,40,florida_state,mizzou,2,W,40,,cbb,
-3/16/2018,gabe,40,40,under,over,146,W,40,florida state_mizzou,cbb,
-3/16/2018,gabe,40,40,clemson,new mexico state,-4.5,W,40,,cbb,
-3/16/2018,gabe,40,40,over,under,134,W,40,clemson_new mexico state,cbb,
-3/17/2018,gabe,40,40,rhode island,duke,9,L,-40,,cbb,
-3/17/2018,gabe,44,40,under,over,148.5,L,-44,rhode island_duke,cbb,
-3/17/2018,gabe,40,40,kansas,seton hall,-4.5,L,-40,,cbb,
-3/17/2018,gabe,44,40,under,over,154.5,L,-44,kansas_seton hall,cbb,
-3/17/2018,gabe,40,40,michigan,houston,-3,L,-40,,cbb,
-3/17/2018,gabe,40,40,over,under,135,L,-40,michigan_houston,cbb,
-3/17/2018,gabe,40,40,loyola chicago,tennessee,5,W,40,,cbb,
-3/17/2018,gabe,40,40,over,under,131,L,-40,loyola chicago_tennessee,cbb,
-3/17/2018,gabe,40,40,texas tech,florida,-1.5,W,40,,cbb,
-3/17/2018,gabe,40,40,over,under,133.5,W,40,texas tech_florida,cbb,
-3/17/2018,gabe,40,40,ohio state,gonzaga,4,L,-40,,cbb,
-3/17/2018,gabe,40,40,over,under,143.5,W,40,ohio state_gonzaga,cbb,
-3/17/2018,gabe,40,40,kentucky,buffalo,-5.5,W,40,,cbb,
-3/17/2018,gabe,40,40,under,over,155.5,L,-44,kentucky_buffalo,cbb,
-3/17/2018,gabe,40,40,bucks,hawks,-10.5,L,-40,,nba,
-3/17/2018,gabe,40,40,under,over,214,L,-44,bucks_hawks,nba,
-3/17/2018,gabe,40,40,pacers,wizards,4.5,L,-40,,nba,
-3/17/2018,gabe,40,40,under,over,209,L,-44,pacers_wizards,nba,
-3/17/2018,gabe,40,40,rockets,pelicans,-7.5,L,-40,,nba,
-3/17/2018,gabe,40,40,over,under,227,L,-40,rockets_pelicans,nba,
-3/17/2018,gabe,40,40,nets,mavs,-3.5,W,40,,nba,
-3/17/2018,gabe,40,40,under,over,212,L,-40,nets_mavs,nba,
-3/17/2018,gabe,40,40,hornets,knicks,-6.5,L,-40,,nba,
-3/17/2018,gabe,40,40,over,under,223,W,40,hornets_knicks,nba,
-3/17/2018,gabe,40,40,nuggets,grizzlies,-6.5,L,-40,,nba,
-3/17/2018,gabe,40,40,under,over,214.5,W,40,nuggets_grizzlies,nba,
-3/17/2018,gabe,40,40,bulls,cavs,6.5,W,40,,nba,
-3/17/2018,gabe,40,40,under,over,224.5,W,40,bulls_cavs,nba,
-3/17/2018,gabe,40,40,spurs,timberwolves,-4,W,40,,nba,
-3/17/2018,gabe,40,40,under,over,211,L,-44,spurs_timberwolves,nba,
-3/17/2018,gabe,40,40,kings,jazz,15.5,W,40,,nba,
-3/17/2018,gabe,40,40,under,over,197.5,L,-44,kings_jazz,nba,
-3/17/2018,gabe,40,40,warriors,suns,-3,W,40,,nba,
-3/17/2018,gabe,40,40,under,over,215.5,L,-44,warriors_suns,nba,
-3/17/2018,gabe,40,40,pistons,trailblazers,8.5,L,-40,,nba,
-3/17/2018,gabe,40,40,over,under,207.5,L,-40,pistons_trailblazers,nba,
-3/19/2018,gabe,40,40,magic,raptors,10,W,40,,nba,
-3/19/2018,gabe,42,40,under,over,215,W,40,magic_raptors,nba,
-3/19/2018,gabe,40,40,pelicans,mavs,-8.5,W,40,,nba,
-3/19/2018,gabe,42,40,under,over,219,L,-42,pelicans_mavs,nba,
-3/19/2018,gabe,40,40,timberwolves,clippers,-4,W,40,,nba,
-3/19/2018,gabe,42,40,under,over,226,L,-42,timberwolves_clippers,nba,
-3/19/2018,gabe,40,40,celtics,thunder,4.5,W,40,,nba,
-3/19/2018,gabe,40,40,over,under,208.5,L,-40,celtics_thunder,nba,
-3/19/2018,gabe,40,40,hawks,jazz,14,W,40,,nba,
-3/19/2018,gabe,40,40,under,over,206.5,W,40,hawks_jazz,nba,
-3/19/2018,gabe,40,40,suns,pistons,6,L,-40,,nba,
-3/19/2018,gabe,40,40,under,over,217,W,40,suns_pistons,nba,
-3/19/2018,gabe,40,40,trailblazers,rockets,5,W,40,,nba,
-3/19/2018,gabe,40,40,over,under,217.5,W,40,trailblazers_rockets,nba,
-3/21/2018,gabe,40,40,raptors,cavs,1.5,L,-40,,nba,
-3/21/2018,gabe,40,40,over,under,226,W,40,raptors_cavs,nba,
-3/21/2018,gabe,40,40,grizzlies,76ers,12,L,-40,,nba,
-3/21/2018,gabe,42,40,under,over,212,L,-42,grizzlies_76ers,nba,
-3/21/2018,gabe,40,40,knicks,heat,10.5,L,-40,,nba,
-3/21/2018,gabe,42,40,under,over,216.5,L,-42,knicks_heat,nba,
-3/21/2018,gabe,40,40,hornets,nets,-1.5,W,40,,nba,
-3/21/2018,gabe,42,40,under,over,221.5,W,40,hornets_nets,nba,
-3/21/2018,gabe,40,40,clippers,bucks,5,W,40,,nba,
-3/21/2018,gabe,40,40,over,under,223,W,40,clippers_bucks,nba,
-3/21/2018,gabe,40,40,bulls,nuggets,9,L,-40,,nba,
-3/21/2018,gabe,40,40,over,under,219.5,W,40,bulls_nuggets,nba,
-3/21/2018,gabe,40,40,spurs,wizards,-5.5,W,40,,nba,
-3/21/2018,gabe,40,40,over,under,202.5,L,-40,spurs_wizards,nba,
-3/21/2018,gabe,40,40,pacers,pelicans,-1,L,-40,,nba,
-3/21/2018,gabe,42,40,under,over,219.5,W,40,pacers_pelicans,nba,
-3/22/2018,gabe,40,40,magic,76ers,7.5,,,,nba,
-3/22/2018,gabe,42,40,under,over,212.5,,,magic_76ers,nba,
-3/22/2018,gabe,40,40,jazz,mavs,-8,,,,nba,
-3/22/2018,gabe,42,40,under,over,199,,,jazz_mavs,nba,
-3/22/2018,gabe,40,40,kings,hawks,-2.5,,,,nba,
-3/22/2018,gabe,42,40,under,over,212.5,,,kings_hawks,nba,
-3/22/2018,gabe,40,40,kentucky,kansas state,-5.5,,,,nba,
-3/22/2018,gabe,42,40,under,over,136,,,kentucky_kansas state,nba,
-3/22/2018,gabe,40,40,nevada,loyola chicago,-2,,,,nba,
-3/22/2018,gabe,42,40,under,over,143.5,,,nevada_loyola chicago,nba,
-3/22/2018,gabe,40,40,texas am,michigan,2.5,,,,nba,
-3/22/2018,gabe,40,40,over,under,136,,,texas am_michigan,nba,
-3/22/2018,gabe,40,40,florida state,gonzaga,5.5,,,,nba,
-3/22/2018,gabe,42,40,under,over,152.5,,,florida state_gonzaga,nba,
+2/26/2018,gabe,40,40,pistons,raptors,10.5,L,-40,,nba,yes
+2/26/2018,gabe,44,40,under,over,217.5,W,40,pistons_raptors,nba,yes
+2/26/2018,gabe,40,40,bulls,nets,5,L,-40,,nba,yes
+2/26/2018,gabe,44,40,under,over,216.5,W,40,bulls_nets,nba,yes
+2/26/2018,gabe,40,40,celtics,grizzlies,-12,L,-40,,nba,yes
+2/26/2018,gabe,44,40,over,under,204,W,40,celtics_grizzlies,nba,yes
+2/26/2018,gabe,40,40,lakers,hawks,-2,W,40,,nba,yes
+2/26/2018,gabe,44,40,under,over,221,L,-44,lakers_hawks,nba,yes
+2/26/2018,gabe,40,40,warriors,knicks,-12,W,40,,nba,yes
+2/26/2018,gabe,44,40,under,over,227,L,-44,warriors_knicks,nba,yes
+2/26/2018,gabe,40,40,pelicans,suns,-7.5,W,40,,nba,yes
+2/26/2018,gabe,44,40,under,over,235.5,L,-44,pelicans_suns,nba,yes
+2/26/2018,gabe,40,40,magic,thunder,10.5,W,40,,nba,yes
+2/26/2018,gabe,44,40,under,over,218,W,40,magic_thunder,nba,yes
+2/26/2018,gabe,40,40,pacers,mavs,-3,L,-40,,nba,yes
+2/26/2018,gabe,44,40,under,over,210,L,-44,pacers_mavs,nba,yes
+2/26/2018,gabe,40,40,rockets,jazz,-2,W,40,,nba,yes
+2/26/2018,gabe,44,40,under,over,211.5,W,40,rockets_jazz,nba,yes
+2/26/2018,gabe,40,40,kings,timberwolves,5.5,L,-40,,nba,yes
+2/26/2018,gabe,44,40,under,over,216.5,L,-44,kings_timberwolves,nba,yes
+2/27/2018,gabe,40,40,bulls,hornets,11,L,-40,,nba,yes
+2/27/2018,gabe,44,40,under,over,218.5,L,-44,bulls_hornets,nba,yes
+2/27/2018,gabe,40,40,cavs,nets,-10,L,-40,,nba,yes
+2/27/2018,gabe,44,40,under,over,222,L,-44,cavs_nets,nba,yes
+2/27/2018,gabe,40,40,76ers,heat,1,P,0,,nba,yes
+2/27/2018,gabe,44,40,over,under,205,L,-40,76ers_heat,nba,yes
+2/27/2018,gabe,40,40,bucks,wizards,-3,L,-40,,nba,yes
+2/27/2018,gabe,44,40,over,under,212,L,-40,bucks_wizards,nba,yes
+2/27/2018,gabe,40,40,trailblazers,kings,-12,W,40,,nba,yes
+2/27/2018,gabe,44,40,under,over,208.5,L,-44,trailblazers_kings,nba,yes
+2/27/2018,gabe,40,40,nuggets,clippers,-5,L,-40,,nba,yes
+2/27/2018,gabe,44,40,under,over,230,L,-44,nuggets_clippers,nba,yes
+2/28/2018,gabe,40,40,pistons,bucks,-1.5,W,40,,nba,yes
+2/28/2018,gabe,44,40,under,over,208,W,40,pistons_bucks,nba,yes
+2/28/2018,gabe,40,40,magic,raptors,9.5,L,-40,,nba,yes
+2/28/2018,gabe,44,40,under,over,222,W,40,magic_raptors,nba,yes
+2/28/2018,gabe,40,40,pacers,hawks,-5,L,-40,,nba,yes
+2/28/2018,gabe,44,40,under,over,214,W,40,pacers_hawks,nba,yes
+2/28/2018,gabe,40,40,celtics,hornets,-7.5,W,40,,nba,yes
+2/28/2018,gabe,44,40,under,over,208.5,L,-44,celtics_hornets,nba,yes
+2/28/2018,gabe,40,40,grizzlies,suns,-1.5,L,-40,,nba,yes
+2/28/2018,gabe,44,40,under,over,216,W,40,grizzlies_suns,nba,yes
+2/28/2018,gabe,40,40,warriors,wizards,-8.5,L,-40,,nba,yes
+2/28/2018,gabe,44,40,under,over,225.5,W,40,warriors_wizards,nba,yes
+2/28/2018,gabe,40,40,spurs,pelicans,-5,L,-40,,nba,yes
+2/28/2018,gabe,44,40,under,over,218.5,L,-44,spurs_pelicans,nba,yes
+2/28/2018,gabe,40,40,thunder,mavs,-5,L,-40,,nba,yes
+2/28/2018,gabe,44,40,under,over,211,L,-44,thunder_mavs,nba,yes
+2/28/2018,gabe,40,40,clippers,rockets,8,L,-40,,nba,yes
+2/28/2018,gabe,44,40,under,over,226.5,W,40,clippers_rockets,nba,yes
+3/1/2018,gabe,40,40,heat,lakers,-5,L,-40,,nba,yes
+3/1/2018,gabe,44,40,under,over,216.5,L,-44,heat_lakers,nba,yes
+3/1/2018,gabe,40,40,cavs,76ers,-2.5,L,-40,,nba,yes
+3/1/2018,gabe,44,40,under,over,223,W,40,cavs_76ers,nba,yes
+3/1/2018,gabe,40,40,kings,nets,2.5,W,40,,nba,yes
+3/1/2018,gabe,44,40,under,over,213,L,-44,kings_nets,nba,yes
+3/1/2018,gabe,40,40,trailblazers,timberwolves,-5,W,40,,nba,yes
+3/1/2018,gabe,40,40,over,under,217.5,L,-40,trailblazers_timberwolves,nba,yes
+3/2/2018,gabe,40,40,magic,pistons,3,W,40,,nba,yes
+3/2/2018,gabe,44,40,under,over,214,L,-44,magic_pisons,nba,yes
+3/2/2018,gabe,40,40,76ers,hornets,-3.5,W,40,,nba,yes
+3/2/2018,gabe,44,40,under,over,214,W,40,76ers_hornets,nba,yes
+3/2/2018,gabe,40,40,warriors,hawks,-13,L,-40,,nba,yes
+3/2/2018,gabe,44,40,under,over,226,W,40,warriors_hawks,nba,yes
+3/2/2018,gabe,40,40,bulls,mavs,2,W,40,,nba,yes
+3/2/2018,gabe,44,40,under,over,214,W,40,bulls_mavs,nba,yes
+3/2/2018,gabe,40,40,nuggets,grizzlies,-7.5,L,-40,,nba,yes
+3/2/2018,gabe,44,40,under,over,213.5,W,40,nuggets_grizzlies,nba,yes
+3/2/2018,gabe,40,40,raptors,wizards,-4,W,40,,nba,yes
+3/2/2018,gabe,40,40,over,under,217,L,-40,raptors_wizards,nba,yes
+3/2/2018,gabe,40,40,bucks,pacers,-3.5,L,-40,,nba,yes
+3/2/2018,gabe,44,40,under,over,210.5,W,40,bucks_pacers,nba,yes
+3/2/2018,gabe,40,40,thunder,suns,-7.5,W,40,,nba,yes
+3/2/2018,gabe,44,40,under,over,226.5,L,-44,thunder_suns,nba,yes
+3/2/2018,gabe,40,40,jazz,timberwolves,-7,W,40,,nba,yes
+3/2/2018,gabe,44,40,under,over,208,L,-44,jazz_timberwolves,nba,yes
+3/2/2018,gabe,40,40,knicks,clippers,8.5,L,-40,,nba,yes
+3/2/2018,gabe,44,40,under,over,226.5,L,-44,knicks_clippers,nba,yes
+3/3/2018,gabe,40,40,grizzlies,magic,6.5,L,-40,,nba,yes
+3/3/2018,gabe,44,40,under,over,211,W,40,grizzlies_magic,nba,yes
+3/3/2018,gabe,40,40,pistons,heat,5.5,L,-40,,nba,yes
+3/3/2018,gabe,40,40,over,under,203.5,L,-40,pistons_heat,nba,yes
+3/3/2018,gabe,40,40,rockets,celtics,-8.5,L,-40,,nba,yes
+3/3/2018,gabe,40,40,under,over,213,L,-44,rockets_celtics,nba,yes
+3/3/2018,gabe,40,40,spurs,lakers,-5.5,L,-40,,nba,yes
+3/3/2018,gabe,44,40,under,over,218,L,-44,spurs_lakers,nba,yes
+3/3/2018,gabe,40,40,kings,jazz,7.5,W,40,,nba,yes
+3/3/2018,gabe,44,40,under,over,202,W,40,kings_jazz,nba,yes
+3/3/2018,gabe,40,40,thunder,trailblazers,5.5,L,-40,,nba,yes
+3/3/2018,gabe,44,40,over,under,214.5,L,-40,thunder_trailblazers,nba,yes
+3/3/2018,gabe,40,40,cavs,nuggets,-4.5,L,-40,,nba,yes
+3/3/2018,gabe,40,40,over,under,228.5,W,40,cavs_nuggets,nba,yes
+3/4/2018,gabe,40,40,purdue,michigan,-4.5,L,-40,,cbb,yes
+3/5/2018,gabe,40,40,cavs,pistons,-6,W,40,,nba,yes
+3/5/2018,gabe,44,40,under,over,218.5,W,40,cavs_pistons,nba,yes
+3/5/2018,gabe,40,40,pacers,bucks,-2.5,W,40,,nba,yes
+3/5/2018,gabe,44,40,under,over,208,W,40,pacers_bucks,nba,yes
+3/5/2018,gabe,40,40,suns,heat,9,L,-40,,nba,yes
+3/5/2018,gabe,44,40,under,over,216.5,L,-44,suns_heat,nba,yes
+3/5/2018,gabe,40,40,bulls,celtics,8.5,L,-40,,nba,yes
+3/5/2018,gabe,44,40,under,over,214.5,W,40,bulls_celtics,nba,yes
+3/5/2018,gabe,40,40,spurs,grizzlies,-11,L,-40,,nba,yes
+3/5/2018,gabe,44,40,under,over,201.5,W,40,spurs_grizzlies,nba,yes
+3/5/2018,gabe,40,40,magic,jazz,10,L,-40,,nba,yes
+3/5/2018,gabe,44,40,under,over,207,W,40,magic_jazz,nba,yes
+3/5/2018,gabe,40,40,trailblazers,lakers,-2,W,40,,nba,yes
+3/5/2018,gabe,44,40,under,over,224.5,W,40,trailblazers_lakers,nba,yes
+3/7/2018,gabe,40,40,bulls,grizzlies,-3.5,W,40,,nba,yes
+3/7/2018,gabe,44,40,under,over,211.5,L,-44,bulls_grizzlies,nba,yes
+3/7/2018,gabe,40,40,bucks,rockets,5.5,L,-40,,nba,yes
+3/7/2018,gabe,44,40,under,over,214,W,40,bucks_rockets,nba,yes
+3/7/2018,gabe,40,40,raptors,pistons,-5.5,L,-40,,nba,yes
+3/7/2018,gabe,44,40,under,over,214,L,-44,raptors_pistons,nba,yes
+3/7/2018,gabe,40,40,pelicans,kings,-5.5,W,40,,nba,yes
+3/7/2018,gabe,44,40,under,over,223.5,W,40,pelicans_kings,nba,yes
+3/7/2018,gabe,40,40,cavs,nuggets,3.5,W,40,,nba,yes
+3/7/2018,gabe,44,40,under,over,229,W,40,cavs_nuggets,nba,yes
+3/7/2018,gabe,40,40,magic,lakers,6.5,W,40,,nba,yes
+3/7/2018,gabe,44,40,under,over,225,W,40,magic_lakers,nba,yes
+3/8/2018,gabe,40,40,pacers,hawks,-8.5,W,40,,nba,yes
+3/8/2018,gabe,44,40,under,over,209.5,W,40,pacers_hawks,nba,yes
+3/8/2018,gabe,40,40,pistons,bulls,-8,W,40,,nba,yes
+3/8/2018,gabe,44,40,under,over,212.5,W,40,pistons_bulls,nba,yes
+3/8/2018,gabe,40,40,rockets,raptors,-2.5,L,-40,,nba,yes
+3/8/2018,gabe,44,40,over,under,220.5,L,-40,rockets_raptors,nba,yes
+3/8/2018,gabe,40,40,bucks,knicks,-10,L,-40,,nba,yes
+3/8/2018,gabe,44,40,under,over,212.5,L,-44,bucks_knicks,nba,yes
+3/8/2018,gabe,40,40,grizzlies,jazz,9,L,-40,,nba,yes
+3/8/2018,gabe,44,40,over,under,197.5,L,-40,grizzlies_jazz,nba,yes
+3/8/2018,gabe,40,40,pelicans,wizards,3.5,L,-40,,nba,yes
+3/8/2018,gabe,44,40,under,over,220,W,40,pelicans_wizards,nba,yes
+3/8/2018,gabe,40,40,nuggets,lakers,-6.5,W,40,,nba,yes
+3/8/2018,gabe,44,40,under,over,229.5,L,-44,nuggets_lakers,nba,yes
+3/8/2018,gabe,40,40,warriors,trailblazers,-1.5,L,-40,,nba,yes
+3/8/2018,gabe,44,40,over,under,222.5,W,40,warriors_trailblazers,nba,yes
+3/8/2018,gabe,40,40,magic,kings,4,L,-40,,nba,yes
+3/8/2018,gabe,44,40,under,over,210,W,40,magic_kings,nba,yes
+3/8/2018,gabe,40,40,cavs,clippers,1.5,L,-40,,nba,yes
+3/8/2018,gabe,44,40,under,over,229.5,W,40,cavs_clippers,nba,yes
+3/8/2018,gabe,40,40,florida,arkansas,-4,L,-40,,cbb,yes
+3/8/2018,gabe,40,40,over,under,144.5,W,40,florida_arkansas,cbb,yes
+3/10/2018,gabe,40,40,wizards,heat,5,L,-40,,nba,yes
+3/10/2018,gabe,44,40,under,over,205.5,L,-44,wizards_heat,nba,yes
+3/10/2018,gabe,40,40,thunder,spurs,-4.5,W,40,,nba,yes
+3/10/2018,gabe,44,40,under,over,211,W,40,thunder_spurs,nba,yes
+3/10/2018,gabe,40,40,grizzlies,mavs,8.5,L,-40,,nba,yes
+3/10/2018,gabe,44,40,under,over,208,W,40,grizzlies_mavs,nba,yes
+3/10/2018,gabe,40,40,magic,clippers,11.5,W,40,,nba,yes
+3/10/2018,gabe,44,40,under,over,216.5,L,-44,magic_clippers,nba,yes
+3/11/2018,gabe,40,40,knicks,raptors,9.5,L,-40,,nba,yes
+3/11/2018,gabe,44,40,under,over,217,L,-44,knicks_raptors,nba,yes
+3/11/2018,gabe,40,40,bulls,hawks,2.5,W,40,,nba,yes
+3/11/2018,gabe,44,40,under,over,214.5,L,-44,bulls_hawks,nba,yes
+3/11/2018,gabe,40,40,warriors,timberwolves,-4.5,L,-40,,nba,yes
+3/11/2018,gabe,40,40,over,under,225.5,L,-40,warriors_timberwolves,nba,yes
+3/11/2018,gabe,40,40,pelicans,jazz,2.5,L,-40,,nba,yes
+3/11/2018,gabe,44,40,under,over,213,L,-44,pelicans_jazz,nba,yes
+3/11/2018,gabe,40,40,nuggets,kings,-11.5,W,40,,nba,yes
+3/11/2018,gabe,44,40,under,over,217,L,-44,nuggets_kings,nba,yes
+3/11/2018,gabe,40,40,rockets,mavs,-9.5,W,40,,nba,yes
+3/11/2018,gabe,44,40,under,over,211.5,W,40,rockets_mavs,nba,yes
+3/11/2018,gabe,40,40,pacers,celtics,6.5,W,40,,nba,yes
+3/11/2018,gabe,44,40,under,over,207.5,W,40,pacers_celtics,nba,yes
+3/11/2018,gabe,40,40,76ers,nets,6,L,-40,,nba,yes
+3/11/2018,gabe,44,40,under,over,217.5,W,40,76ers_nets,nba,yes
+3/11/2018,gabe,40,40,cavs,lakers,-2,L,-40,,nba,yes
+3/11/2018,gabe,44,40,under,over,228.5,L,-44,cavs_lakers,nba,yes
+3/14/2018,gabe,40,40,magic,bucks,9,W,40,,nba,yes
+3/14/2018,gabe,42,40,under,over,208,L,-42,magic_bucks,nba,yes
+3/14/2018,gabe,40,40,wizards,celtics,-3.5,L,-40,,nba,yes
+3/14/2018,gabe,42,40,under,over,203,L,-42,wizards_celtics,nba,yes
+3/14/2018,gabe,40,40,kings,heat,7,W,40,,nba,yes
+3/14/2018,gabe,42,40,under,over,207,L,-42,kings_heat,nba,yes
+3/14/2018,gabe,40,40,warriors,lakers,-6.5,W,40,,nba,yes
+3/14/2018,gabe,42,40,under,over,224.5,W,40,warriors_lakers,nba,yes
+3/15/2018,gabe,200,200,bracket,bracket,ncca_tourney,,-200,,cbb,yes
+3/15/2018,gabe,40,40,raptors,pacers,-4,W,40,,nba,yes
+3/15/2018,gabe,42,40,under,over,212.5,W,40,raptors_pacers,nba,yes
+3/15/2018,gabe,40,40,hornets,hawks,-5.5,W,40,,nba,yes
+3/15/2018,gabe,42,40,under,over,219.5,L,-42,hornets_hawks,nba,yes
+3/15/2018,gabe,40,40,knicks,76ers,9.5,W,40,,nba,yes
+3/15/2018,gabe,42,40,under,over,216.5,L,-42,knicks_76ers,nba,yes
+3/15/2018,gabe,40,40,rockets,clippers,-11.5,L,-40,,nba,yes
+3/15/2018,gabe,42,40,under,over,223.5,W,40,rockets_clippers,nba,yes
+3/15/2018,gabe,40,40,bulls,grizzlies,1,W,40,,nba,yes
+3/15/2018,gabe,42,40,under,over,211.5,L,-42,bulls_grizzlies,nba,yes
+3/15/2018,gabe,40,40,spurs,pelicans,-4.5,W,40,,nba,yes
+3/15/2018,gabe,42,40,under,over,219,W,40,spurs_pelicans,nba,yes
+3/15/2018,gabe,40,40,suns,jazz,13.5,L,-40,,nba,yes
+3/15/2018,gabe,42,40,under,over,213,W,40,suns_jazz,nba,yes
+3/15/2018,gabe,40,40,pistons,nuggets,8.5,W,40,,nba,yes
+3/15/2018,gabe,42,40,under,over,220,L,-42,pistons_nuggets,nba,yes
+3/15/2018,gabe,40,40,villanova,radford,-23,W,40,,cbb,yes
+3/15/2018,gabe,40,40,over,under,138.5,W,40,villanova_radford,cbb,yes
+3/15/2018,gabe,40,40,virginia tech,alabama,-2.5,L,-40,,cbb,yes
+3/15/2018,gabe,42,40,under,over,141,L,-42,virginia tech_alabama,cbb,yes
+3/15/2018,gabe,40,40,seton hall,nc state,-3,W,40,,cbb,yes
+3/15/2018,gabe,42,40,under,over,158.5,L,-42,seton hall_nc state,cbb,yes
+3/15/2018,gabe,40,40,michigan,montana,-10,W,40,,cbb,yes
+3/15/2018,gabe,40,40,over,under,134,L,-42,michigan_montana,cbb,yes
+3/15/2018,gabe,40,40,davidson,kentucky,4.5,L,-40,,cbb,yes
+3/15/2018,gabe,40,40,over,under,142.5,W,40,davidson_kentucky,cbb,yes
+3/15/2018,gabe,40,40,arizona,buffalo,-8,L,-40,,cbb,yes
+3/15/2018,gabe,42,40,under,over,158.5,W,40,arizona_buffalo,cbb,yes
+3/15/2018,gabe,40,40,florida,st bonaventure,-5.5,W,40,,cbb,yes
+3/15/2018,gabe,40,40,over,under,143,L,-40,florida_st bonaventure,cbb,yes
+3/16/2018,gabe,40,40,magic,celtics,6.5,L,-40,,nba,yes
+3/16/2018,gabe,42,40,under,over,203.5,W,40,magic_celtics,nba,yes
+3/16/2018,gabe,40,40,76ers,nets,-8.5,L,-40,,nba,yes
+3/16/2018,gabe,42,40,under,over,217.5,L,-42,76ers_nets,nba,yes
+3/16/2018,gabe,40,40,mavs,raptors,10.5,W,40,,nba,yes
+3/16/2018,gabe,42,40,under,over,211,L,-42,mavs_raptors,nba,yes
+3/16/2018,gabe,40,40,thunder,clippers,-4.5,W,40,,nba,yes
+3/16/2018,gabe,42,40,under,over,223,L,-42,thunder_clippers,nba,yes
+3/16/2018,gabe,40,40,warriors,kings,-10,L,-40,,nba,yes
+3/16/2018,gabe,42,40,under,over,210,W,40,warriors_kings,nba,yes
+3/16/2018,gabe,40,40,lakers,heat,-4,L,-40,,nba,yes
+3/16/2018,gabe,42,40,under,over,220,W,40,lakers_heat,nba,yes
+3/16/2018,gabe,40,40,texas am,providence,-3,W,40,,cbb,yes
+3/16/2018,gabe,40,40,over,under,138.5,W,40,texas am_providence,cbb,yes
+3/16/2018,gabe,40,40,purdue,cs fullerton,-20,W,40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,144.5,W,40,purdue_cs fullerton,cbb,yes
+3/16/2018,gabe,40,40,marshall,witchita state,12.5,W,40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,167.5,W,40,marshall_witchita state,cbb,yes
+3/16/2018,gabe,40,40,cincinnati,georgia state,-13.5,W,40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,130.5,W,40,cinncinnati_georgia state,cbb,yes
+3/16/2018,gabe,40,40,north_caronlina,libscomb,-20.5,L,-40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,162.5,W,40,north carolina_libscomb,cbb,yes
+3/16/2018,gabe,40,40,butler,arkansas,-1.5,W,40,,cbb,yes
+3/16/2018,gabe,40,40,over,under,150.5,L,-40,butler_arkansas,cbb,yes
+3/16/2018,gabe,40,40,murray_state,west_virginia,10,L,-40,,cbb,yes
+3/16/2018,gabe,40,40,over,under,145.5,W,40,murray state_west virginia,cbb,yes
+3/16/2018,gabe,40,40,nevada,texas,1,W,40,,cbb,yes
+3/16/2018,gabe,40,40,over,under,143.5,W,40,nevad_texas,cbb,yes
+3/16/2018,gabe,40,40,kansas state,creighton,1,W,40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,144.5,W,40,kansas state_creighton,cbb,yes
+3/16/2018,gabe,40,40,bucknell,michigan state,13.5,W,40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,150,L,-42,bucknell_michigan state,cbb,yes
+3/16/2018,gabe,40,40,xavier,texas southern,-18.5,W,40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,160.5,L,-42,xavier_texas southern,cbb,yes
+3/16/2018,gabe,40,40,college charleston,auburn,9.5,W,40,,cbb,yes
+3/16/2018,gabe,42,40,under,over,148,W,40,college charleston_auburn,cbb,yes
+3/16/2018,gabe,40,40,virginia,umbc,-20,L,-40,,cbb,yes
+3/16/2018,gabe,40,40,over,under,120.5,W,40,virginia_umbc,cbb,yes
+3/16/2018,gabe,40,40,syracuse,texas christian,4.5,W,40,,cbb,yes
+3/16/2018,gabe,40,40,over,under,136.5,L,-40,syracuse_texas christian,cbb,yes
+3/16/2018,gabe,40,40,florida_state,mizzou,2,W,40,,cbb,yes
+3/16/2018,gabe,40,40,under,over,146,W,40,florida state_mizzou,cbb,yes
+3/16/2018,gabe,40,40,clemson,new mexico state,-4.5,W,40,,cbb,yes
+3/16/2018,gabe,40,40,over,under,134,W,40,clemson_new mexico state,cbb,yes
+3/17/2018,gabe,40,40,rhode island,duke,9,L,-40,,cbb,yes
+3/17/2018,gabe,44,40,under,over,148.5,L,-44,rhode island_duke,cbb,yes
+3/17/2018,gabe,40,40,kansas,seton hall,-4.5,L,-40,,cbb,yes
+3/17/2018,gabe,44,40,under,over,154.5,L,-44,kansas_seton hall,cbb,yes
+3/17/2018,gabe,40,40,michigan,houston,-3,L,-40,,cbb,yes
+3/17/2018,gabe,40,40,over,under,135,L,-40,michigan_houston,cbb,yes
+3/17/2018,gabe,40,40,loyola chicago,tennessee,5,W,40,,cbb,yes
+3/17/2018,gabe,40,40,over,under,131,L,-40,loyola chicago_tennessee,cbb,yes
+3/17/2018,gabe,40,40,texas tech,florida,-1.5,W,40,,cbb,yes
+3/17/2018,gabe,40,40,over,under,133.5,W,40,texas tech_florida,cbb,yes
+3/17/2018,gabe,40,40,ohio state,gonzaga,4,L,-40,,cbb,yes
+3/17/2018,gabe,40,40,over,under,143.5,W,40,ohio state_gonzaga,cbb,yes
+3/17/2018,gabe,40,40,kentucky,buffalo,-5.5,W,40,,cbb,yes
+3/17/2018,gabe,40,40,under,over,155.5,L,-44,kentucky_buffalo,cbb,yes
+3/17/2018,gabe,40,40,bucks,hawks,-10.5,L,-40,,nba,yes
+3/17/2018,gabe,40,40,under,over,214,L,-44,bucks_hawks,nba,yes
+3/17/2018,gabe,40,40,pacers,wizards,4.5,L,-40,,nba,yes
+3/17/2018,gabe,40,40,under,over,209,L,-44,pacers_wizards,nba,yes
+3/17/2018,gabe,40,40,rockets,pelicans,-7.5,L,-40,,nba,yes
+3/17/2018,gabe,40,40,over,under,227,L,-40,rockets_pelicans,nba,yes
+3/17/2018,gabe,40,40,nets,mavs,-3.5,W,40,,nba,yes
+3/17/2018,gabe,40,40,under,over,212,L,-40,nets_mavs,nba,yes
+3/17/2018,gabe,40,40,hornets,knicks,-6.5,L,-40,,nba,yes
+3/17/2018,gabe,40,40,over,under,223,W,40,hornets_knicks,nba,yes
+3/17/2018,gabe,40,40,nuggets,grizzlies,-6.5,L,-40,,nba,yes
+3/17/2018,gabe,40,40,under,over,214.5,W,40,nuggets_grizzlies,nba,yes
+3/17/2018,gabe,40,40,bulls,cavs,6.5,W,40,,nba,yes
+3/17/2018,gabe,40,40,under,over,224.5,W,40,bulls_cavs,nba,yes
+3/17/2018,gabe,40,40,spurs,timberwolves,-4,W,40,,nba,yes
+3/17/2018,gabe,40,40,under,over,211,L,-44,spurs_timberwolves,nba,yes
+3/17/2018,gabe,40,40,kings,jazz,15.5,W,40,,nba,yes
+3/17/2018,gabe,40,40,under,over,197.5,L,-44,kings_jazz,nba,yes
+3/17/2018,gabe,40,40,warriors,suns,-3,W,40,,nba,yes
+3/17/2018,gabe,40,40,under,over,215.5,L,-44,warriors_suns,nba,yes
+3/17/2018,gabe,40,40,pistons,trailblazers,8.5,L,-40,,nba,yes
+3/17/2018,gabe,40,40,over,under,207.5,L,-40,pistons_trailblazers,nba,yes
+3/19/2018,gabe,40,40,magic,raptors,10,W,40,,nba,yes
+3/19/2018,gabe,42,40,under,over,215,W,40,magic_raptors,nba,yes
+3/19/2018,gabe,40,40,pelicans,mavs,-8.5,W,40,,nba,yes
+3/19/2018,gabe,42,40,under,over,219,L,-42,pelicans_mavs,nba,yes
+3/19/2018,gabe,40,40,timberwolves,clippers,-4,W,40,,nba,yes
+3/19/2018,gabe,42,40,under,over,226,L,-42,timberwolves_clippers,nba,yes
+3/19/2018,gabe,40,40,celtics,thunder,4.5,W,40,,nba,yes
+3/19/2018,gabe,40,40,over,under,208.5,L,-40,celtics_thunder,nba,yes
+3/19/2018,gabe,40,40,hawks,jazz,14,W,40,,nba,yes
+3/19/2018,gabe,40,40,under,over,206.5,W,40,hawks_jazz,nba,yes
+3/19/2018,gabe,40,40,suns,pistons,6,L,-40,,nba,yes
+3/19/2018,gabe,40,40,under,over,217,W,40,suns_pistons,nba,yes
+3/19/2018,gabe,40,40,trailblazers,rockets,5,W,40,,nba,yes
+3/19/2018,gabe,40,40,over,under,217.5,W,40,trailblazers_rockets,nba,yes
+3/21/2018,gabe,40,40,raptors,cavs,1.5,L,-40,,nba,yes
+3/21/2018,gabe,40,40,over,under,226,W,40,raptors_cavs,nba,yes
+3/21/2018,gabe,40,40,grizzlies,76ers,12,L,-40,,nba,yes
+3/21/2018,gabe,42,40,under,over,212,L,-42,grizzlies_76ers,nba,yes
+3/21/2018,gabe,40,40,knicks,heat,10.5,L,-40,,nba,yes
+3/21/2018,gabe,42,40,under,over,216.5,L,-42,knicks_heat,nba,yes
+3/21/2018,gabe,40,40,hornets,nets,-1.5,W,40,,nba,yes
+3/21/2018,gabe,42,40,under,over,221.5,W,40,hornets_nets,nba,yes
+3/21/2018,gabe,40,40,clippers,bucks,5,W,40,,nba,yes
+3/21/2018,gabe,40,40,over,under,223,W,40,clippers_bucks,nba,yes
+3/21/2018,gabe,40,40,bulls,nuggets,9,L,-40,,nba,yes
+3/21/2018,gabe,40,40,over,under,219.5,W,40,bulls_nuggets,nba,yes
+3/21/2018,gabe,40,40,spurs,wizards,-5.5,W,40,,nba,yes
+3/21/2018,gabe,40,40,over,under,202.5,L,-40,spurs_wizards,nba,yes
+3/21/2018,gabe,40,40,pacers,pelicans,-1,L,-40,,nba,yes
+3/21/2018,gabe,42,40,under,over,219.5,W,40,pacers_pelicans,nba,yes
+3/22/2018,gabe,40,40,magic,76ers,7.5,L,-40,,nba,yes
+3/22/2018,gabe,42,40,under,over,212.5,L,-42,magic_76ers,nba,yes
+3/22/2018,gabe,40,40,jazz,mavs,-8,L,-40,,nba,yes
+3/22/2018,gabe,42,40,under,over,199,L,-42,jazz_mavs,nba,yes
+3/22/2018,gabe,40,40,kings,hawks,-2.5,W,40,,nba,yes
+3/22/2018,gabe,42,40,under,over,212.5,W,40,kings_hawks,nba,yes
+3/22/2018,gabe,40,40,kentucky,kansas state,-5.5,L,-40,,cbb,yes
+3/22/2018,gabe,42,40,under,over,136,W,40,kentucky_kansas state,cbb,yes
+3/22/2018,gabe,40,40,nevada,loyola chicago,-2,L,-40,,cbb,yes
+3/22/2018,gabe,42,40,under,over,143.5,W,40,nevada_loyola chicago,cbb,yes
+3/22/2018,gabe,40,40,texas am,michigan,2.5,L,-40,,cbb,yes
+3/22/2018,gabe,40,40,over,under,136,W,40,texas am_michigan,cbb,yes
+3/22/2018,gabe,40,40,florida state,gonzaga,5.5,W,40,,cbb,yes
+3/22/2018,gabe,42,40,under,over,152.5,W,40,florida state_gonzaga,cbb,yes
+3/23/2018,gabe,40,40,pacers,clippers,-3.5,W,40,,nba,yes
+3/23/2018,gabe,42,40,under,over,215.5,W,40,pacers_clippers,nba,yes
+3/23/2018,gabe,40,40,wizards,nuggets,-2.5,L,-40,,nba,yes
+3/23/2018,gabe,40,40,over,under,218,L,-40,wizards_nuggets,nba,yes
+3/23/2018,gabe,40,40,knicks,timberwolves,7.5,W,40,,nba,yes
+3/23/2018,gabe,42,40,under,over,225.5,W,40,knicks_timberwolves,nba,yes
+3/23/2018,gabe,40,40,cavs,suns,-13.5,W,40,,nba,yes
+3/23/2018,gabe,42,40,under,over,229,W,40,cavs_suns,nba,yes
+3/23/2018,gabe,40,40,raptors,nets,-12,L,-40,,nba,yes
+3/23/2018,gabe,40,40,over,under,222,W,40,raptors_nets,nba,yes
+3/23/2018,gabe,40,40,heat,thunder,6,P,0,,nba,yes
+3/23/2018,gabe,42,40,under,over,217,W,40,heat_thunder,nba,yes
+3/23/2018,gabe,40,40,bulls,bucks,5.5,L,-40,,nba,yes
+3/23/2018,gabe,40,40,over,under,216,W,40,bulls_bucks,nba,yes
+3/23/2018,gabe,40,40,spurs,jazz,-3.5,W,40,,nba,yes
+3/23/2018,gabe,40,40,over,under,195,W,40,spurs_jazz,nba,yes
+3/23/2018,gabe,40,40,celtics,trailblazers,6.5,W,40,,nba,yes
+3/23/2018,gabe,40,40,over,under,203,W,40,celtics_trailblazers,nba,yes
+3/23/2018,gabe,40,40,warriors,hawks,-10,W,40,,nba,yes
+3/23/2018,gabe,40,40,over,under,220.5,L,-40,warriors_hawks,nba,yes
+3/23/2018,gabe,40,40,villanova,west_virginia,-5,W,40,,cbb,yes
+3/23/2018,gabe,42,40,under,over,152.5,L,-42,villanova_west virginia,cbb,yes
+3/23/2018,gabe,40,40,purdue,texas_tech,-2,L,-40,,cbb,yes
+3/23/2018,gabe,42,40,under,over,138,L,-42,purdue_texas tech,cbb,yes
+3/23/2018,gabe,40,40,syracuse,duke,11,W,40,,cbb,yes
+3/23/2018,gabe,40,40,over,under,133,W,40,syracuse_duke,cbb,yes
+3/23/2018,gabe,40,40,clemson,kansas,5,W,40,,cbb,yes
+3/23/2018,gabe,42,40,under,over,142.5,L,-42,clemson_kansas,cbb,yes
+3/24/2018,gabe,40,40,timberwolves,76ers,7.5,L,-40,,nba,yes
+3/24/2018,gabe,40,40,over,under,222.5,W,40,timberwolves_76ers,nba,yes
+3/24/2018,gabe,40,40,bulls,pistons,12.5,L,-40,,nba,yes
+3/24/2018,gabe,44,40,under,over,211.5,L,-44,bulls_pistons,nba,yes
+3/24/2018,gabe,40,40,magic,suns,-6,P,0,,nba,yes
+3/24/2018,gabe,44,40,under,over,218,W,40,magic_suns,nba,yes
+3/24/2018,gabe,40,40,grizzlies,lakers,5,L,-40,,nba,yes
+3/24/2018,gabe,44,40,under,over,218,W,40,grizzlies_lakers,nba,yes
+3/24/2018,gabe,40,40,rockets,pelicans,-7.5,W,40,,nba,yes
+3/24/2018,gabe,40,40,over,under,226,L,-40,rockets_pelicans,nba,yes
+3/24/2018,gabe,40,40,hornets,mavs,-1.5,W,40,,nba,yes
+3/24/2018,gabe,44,40,under,over,214,W,40,hornets_mavs,nba,yes
+3/24/2018,gabe,40,40,kansas_state,loyola chicago,-1,L,-40,,cbb,yes
+3/24/2018,gabe,40,40,over,under,126.5,W,40,kansas state_loyola chicago,cbb,yes
+3/24/2018,gabe,40,40,florida state,michigan,4,P,0,,cbb,yes
+3/24/2018,gabe,44,40,under,over,143.5,W,40,florida state_michigan,cbb,yes
+3/25/2018,gabe,40,40,lakers,pistons,5.5,L,-40,,nba,yes
+3/25/2018,gabe,44,40,under,over,213.5,L,-44,lakers_pistons,nba,yes
+3/25/2018,gabe,40,40,hornets,knicks,-11.5,L,-40,,nba,yes
+3/25/2018,gabe,40,40,over,under,221.5,W,40,hornets_knicks,nba,yes
+3/25/2018,gabe,40,40,nuggets,76ers,5.5,L,-40,,nba,yes
+3/25/2018,gabe,44,40,under,over,223.5,L,-44,nuggets_76ers,nba,yes
+3/25/2018,gabe,40,40,timberwolves,grizzlies,-13.5,L,-40,,nba,yes
+3/25/2018,gabe,40,40,over,under,215.5,L,-40,timberwolves_grizzlies,nba,yes
+3/25/2018,gabe,40,40,suns,celtics,9,W,40,,nba,yes
+3/25/2018,gabe,40,40,over,under,209.5,L,-40,suns_celtics,nba,yes
+3/27/2018,gabe,40,40,spurs,wizards,-2,L,-40,,nba,yes
+3/27/2018,gabe,40,40,over,under,201.5,W,40,spurs_wizards,nba,yes
+3/27/2018,gabe,40,40,raptors,nuggets,-8.5,L,-40,,nba,yes
+3/27/2018,gabe,40,40,over,under,225.5,L,-40,raptors_nuggets,nba,yes
+3/27/2018,gabe,40,40,pelicans,trailblazers,-1,L,-40,,nba,yes
+3/27/2018,gabe,40,40,over,under,221.5,L,-40,pelicans_trailblazers,nba,yes
+3/27/2018,gabe,40,40,bulls,rockets,13.5,L,-40,,nba,yes
+3/27/2018,gabe,40,40,under,over,214,W,40,bulls_rockets,nba,yes
+3/27/2018,gabe,40,40,cavs,heat,-3,L,-40,,nba,yes
+3/27/2018,gabe,40,40,under,over,221,W,40,cavs_heat,nba,yes
+3/27/2018,gabe,40,40,kings,mavs,-2.5,L,-40,,nba,yes
+3/27/2018,gabe,40,40,under,over,202,W,40,kings_mavs,nba,yes
+3/27/2018,gabe,40,40,clippers,bucks,-3.5,W,40,,nba,yes
+3/27/2018,gabe,40,40,under,over,225,W,40,clippers_bucks,nba,yes
+3/27/2018,gabe,40,40,warriors,pacers,6.5,L,-40,,nba,yes
+3/27/2018,gabe,40,40,under,over,201.5,W,40,warriors_pacers,nba,yes
+3/28/2018,gabe,40,40,magic,nets,3.5,L,-40,,nba,yes
+3/28/2018,gabe,42,40,under,over,216,W,40,magic_nets,nba,yes
+3/28/2018,gabe,40,40,knicks,76ers,13.5,L,-40,,nba,yes
+3/28/2018,gabe,42,40,under,over,223,W,40,knicks_76ers,nba,yes
+3/28/2018,gabe,40,40,hornets,cavs,-2,L,-40,,nba,yes
+3/28/2018,gabe,42,40,under,over,225.5,W,40,hornets_cavs,nba,yes
+3/28/2018,gabe,40,40,timberwolves,hawks,-12.5,L,-40,,nba,yes
+3/28/2018,gabe,42,40,under,over,220,L,-42,timberwolves_hawks,nba,yes
+3/28/2018,gabe,40,40,trailblazers,grizzlies,-5.5,L,-40,,nba,yes
+3/28/2018,gabe,40,40,over,under,201.5,W,40,trailblazers_grizzlies,nba,yes
+3/28/2018,gabe,40,40,celtics,jazz,8.5,W,40,,nba,yes
+3/28/2018,gabe,40,40,over,under,194,L,-40,celtics_jazz,nba,yes
+3/28/2018,gabe,40,40,suns,clippers,10.5,L,-40,,nba,yes
+3/28/2018,gabe,42,40,under,over,223,W,40,suns_clippers,nba,yes
+3/28/2018,gabe,40,40,lakers,mavs,-8.5,W,40,,nba,yes
+3/28/2018,gabe,40,40,over,under,215.5,L,-40,lakers_mavs,nba,yes
+3/29/2018,gabe,40,40,wizards,pistons,1,L,-40,,nba,yes
+3/29/2018,gabe,42,40,under,over,209,W,40,wizards_pistons,nba,yes
+3/29/2018,gabe,40,40,heat,bulls,-13,L,-40,,nba,yes
+3/29/2018,gabe,42,40,under,over,208.5,W,40,heat_bulls,nba,yes
+3/29/2018,gabe,40,40,spurs,thunder,4,W,40,,nba,yes
+3/29/2018,gabe,42,40,under,over,208.5,W,40,spurs_thunder,nba,yes
+3/29/2018,gabe,40,40,pacers,kings,-8,L,-40,,nba,yes
+3/29/2018,gabe,42,40,under,over,202.5,L,-42,pacers_kings,nba,yes
+3/29/2018,gabe,40,40,warriors,bucks,-5,L,-40,,nba,yes
+3/29/2018,gabe,40,40,over,under,215,W,40,warriors_bucks,nba,yes
+3/30/2018,gabe,40,40,bulls,magic,6.5,W,40,,nba,yes
+3/30/2018,gabe,42,40,under,over,210.5,W,40,bulls_magic,nba,yes
+3/30/2018,gabe,40,40,76ers,hawks,-7.5,W,40,,nba,yes
+3/30/2018,gabe,42,40,under,over,219.5,W,40,76ers_hawks,nba,yes
+3/30/2018,gabe,40,40,cavs,pelicans,-4,W,40,,nba,yes
+3/30/2018,gabe,42,40,under,over,227,W,40,cavs_pelicans,nba,yes
+3/30/2018,gabe,40,40,thunder,nuggets,-4,L,-40,,nba,yes
+3/30/2018,gabe,40,40,over,under,222.5,W,40,thunder_nuggets,nba,yes
+3/30/2018,gabe,40,40,rockets,suns,-17,L,-40,,nba,yes
+3/30/2018,gabe,42,40,under,over,217,W,40,rockets_suns,nba,yes
+3/30/2018,gabe,40,40,timberwolves,mavs,-6,L,-40,,nba,yes
+3/30/2018,gabe,40,40,over,under,216.5,L,-40,timberwolves_mavs,nba,yes
+3/30/2018,gabe,40,40,grizzlies,jazz,15,W,40,,nba,yes
+3/30/2018,gabe,40,40,over,under,197,W,40,grizzlies_jazz,nba,yes
+3/30/2018,gabe,40,40,bucks,lakers,2,W,40,,nba,yes
+3/30/2018,gabe,42,40,under,over,220,L,-42,bucks_lakers,nba,yes
+3/30/2018,gabe,40,40,clippers,trailblazers,6.5,L,-40,,nba,yes
+3/30/2018,gabe,40,40,over,under,217.5,L,-40,clippers_trailblazers,nba,yes
+3/31/2018,gabe,50,50,hornets,wizards,5.5,L,-50,,nba,yes
+3/31/2018,gabe,53,50,under,over,218.5,W,50,hornets_wizards,nba,yes
+3/31/2018,gabe,50,50,pistons,knicks,-4,W,50,,nba,yes
+3/31/2018,gabe,53,50,under,over,210.5,L,-53,pistons_knicks,nba,yes
+3/31/2018,gabe,50,50,raptors,celtics,-4.5,L,-50,,nba,yes
+3/31/2018,gabe,50,50,over,under,204.5,W,50,raptors_celtics,nba,yes
+3/31/2018,gabe,50,50,heat,nets,-7.5,L,-50,,nba,yes
+3/31/2018,gabe,53,50,under,over,211.5,L,-53,heat_nets,nba,yes
+3/31/2018,gabe,50,50,kings,warriors,8.5,L,-50,,nba,yes
+3/31/2018,gabe,53,50,under,over,210,W,50,kings_warriors,nba,yes
+3/31/2018,gabe,50,50,loyola chicago,michigan,5,L,-50,,cbb,yes
+3/31/2018,gabe,50,50,over,under,130,L,-53,loyola chicago_michigan,cbb,yes
+3/31/2018,gabe,50,50,kansas,villanova,5,L,-50,,cbb,yes
+3/31/2018,gabe,53,50,under,over,154.5,L,-50,kansas_villanova,cbb,yes
+4/1/2018,gabe,40,40,jazz,timberwolves,-2.5,W,40,,nba,yes
+4/1/2018,gabe,42,40,under,over,209.5,L,-42,jazz_timberwolves,nba,yes
+4/1/2018,gabe,40,40,nuggets,bucks,-4.5,L,-40,,nba,yes
+4/1/2018,gabe,40,40,over,under,222,W,40,nuggets_bucks,nba,yes
+4/1/2018,gabe,40,40,warriors,suns,-14,L,-40,,nba,yes
+4/1/2018,gabe,42,40,under,over,215,L,-42,warriors_suns,nba,yes
+4/1/2018,gabe,40,40,trailblazers,grizzlies,-16,L,-40,,nba,yes
+4/1/2018,gabe,40,40,over,under,205.5,W,40,trailblazers_grizzlies,nba,yes
+4/1/2018,gabe,40,40,kings,lakers,7.5,W,40,,nba,yes
+4/1/2018,gabe,40,40,over,under,212,L,-40,kings_lakers,nba,yes
+4/2/2018,gabe,100,100,villanova,michigan,-7,W,100,,cbb,yes
+4/2/2018,gabe,100,100,under,over,144,W,100,villanova_michigan,cbb,yes
+4/4/2018,gabe,40,40,raptors,celtics,-7.5,W,40,,nba,
+4/4/2018,gabe,42,40,under,over,206,W,40,,nba,
+4/4/2018,gabe,40,40,76ers,pistons,-1.5,W,40,,nba,
+4/4/2018,gabe,42,40,under,over,215,L,-42,,nba,
+4/4/2018,gabe,40,40,magic,mavs,-3.5,W,40,,nba,
+4/4/2018,gabe,40,40,over,under,198.5,W,40,,nba,
+4/4/2018,gabe,40,40,heat,hawks,-8,W,40,,nba,
+4/4/2018,gabe,40,40,over,under,205.5,L,-40,,nba,
+4/4/2018,gabe,40,40,pelicans,grizzlies,-13,W,40,,nba,
+4/4/2018,gabe,42,40,under,over,215.5,L,-42,,nba,
+4/4/2018,gabe,40,40,spurs,lakers,-6,L,-40,,nba,
+4/4/2018,gabe,42,40,under,over,208.5,L,-42,,nba,
+4/6/2018,gabe,40,40,magic,hornets,5.5,L,-40,,nba,
+4/6/2018,gabe,44,40,under,over,211.5,L,-44,,nba,
+4/6/2018,gabe,40,40,pistons,mavs,-6.5,W,40,,nba,
+4/6/2018,gabe,44,40,under,over,203,L,-44,,nba,
+4/6/2018,gabe,40,40,wizards,hawks,-10.5,L,-40,,nba,
+4/6/2018,gabe,40,40,over,under,208.5,L,-40,,nba,
+4/6/2018,gabe,40,40,cavs,76ers,4,W,40,,nba,
+4/6/2018,gabe,44,40,under,over,224,L,-44,,nba,
+4/6/2018,gabe,40,40,bulls,celtics,8.5,W,40,,nba,
+4/6/2018,gabe,40,40,over,under,199,W,40,,nba,
+4/6/2018,gabe,40,40,raptors,pacers,-7.5,W,40,,nba,
+4/6/2018,gabe,40,40,over,under,209,L,-40,,nba,
+4/6/2018,gabe,40,40,heat,knicks,-8.5,L,-40,,nba,
+4/6/2018,gabe,44,40,under,over,208.5,L,-44,,nba,
+4/6/2018,gabe,40,40,kings,grizzlies,-3.5,L,-40,,nba,
+4/6/2018,gabe,44,40,under,over,202.5,W,40,,nba,
+4/6/2018,gabe,40,40,suns,pelicans,11.5,L,-40,,nba,
+4/6/2018,gabe,44,40,under,over,219,L,-44,,nba,
+4/6/2018,gabe,40,40,timberwolves,lakers,-4.5,W,40,,nba,
+4/6/2018,gabe,44,40,under,over,221,W,40,,nba,
+4/7/2018,gabe,40,40,bucks,knicks,-9,W,40,,nba,
+4/7/2018,gabe,42,40,under,over,215.5,L,-42,,nba,
+4/7/2018,gabe,40,40,bulls,nets,6,L,-40,,nba,
+4/7/2018,gabe,42,40,under,over,218.5,L,-42,,nba,
+4/7/2018,gabe,40,40,warriors,pelicans,-6.5,L,-40,,nba,
+4/7/2018,gabe,42,40,under,over,226,L,-42,,nba,
+4/7/2018,gabe,40,40,thunder,rockets,5.5,W,40,,nba,
+4/7/2018,gabe,42,40,under,over,219.5,W,40,,nba,
+4/7/2018,gabe,40,40,trailblazers,spurs,5,L,-40,,nba,
+4/7/2018,gabe,40,40,over,under,202.5,W,40,,nba,
+4/8/2018,gabe,40,40,pistons,grizzlies,-6.5,L,-40,,nba,
+4/8/2018,gabe,40,40,over,under,202.5,W,40,,nba,
+4/8/2018,gabe,40,40,magic,raptors,12.5,W,40,,nba,
+4/8/2018,gabe,42,40,under,over,210,L,-42,,nba,
+4/8/2018,gabe,40,40,jazz,lakers,-7.5,W,40,,nba,
+4/8/2018,gabe,40,40,over,under,208.5,W,40,,nba,
+4/8/2018,gabe,40,40,warriors,suns,-12.5,W,40,,nba,
+4/8/2018,gabe,42,40,under,over,216.5,L,-42,,nba,
+4/9/2018,gabe,40,40,knicks,cavs,12,L,-40,,nba,
+4/9/2018,gabe,42,40,under,over,222.5,L,-42,,nba,
+4/9/2018,gabe,40,40,nets,bulls,-6.5,W,40,,nba,
+4/9/2018,gabe,42,40,under,over,217,L,-42,,nba,
+4/9/2018,gabe,40,40,thunder,heat,-4.5,W,40,,nba,
+4/9/2018,gabe,40,40,over,under,212.5,L,-40,,nba,
+4/9/2018,gabe,40,40,grizzlies,timberwolves,16,L,-40,,nba,
+4/9/2018,gabe,42,40,under,over,213.5,W,40,,nba,
+4/9/2018,gabe,40,40,bucks,magic,-10,W,40,,nba,
+4/9/2018,gabe,40,40,over,under,209,L,-40,,nba,
+4/9/2018,gabe,40,40,kings,spurs,14,W,40,,nba,
+4/9/2018,gabe,42,40,under,over,201,W,40,,nba,
+4/9/2018,gabe,40,40,trailblazers,nuggets,4.5,L,-40,,nba,
+4/9/2018,gabe,40,40,over,under,219.5,L,-40,,nba,
+4/9/2018,gabe,40,40,clippers,pelicans,8.5,L,-40,,nba,
+4/9/2018,gabe,42,40,under,over,224,W,40,,nba,
+4/11/2018,gabe,40,40,heat,raptors,-4.5,W,40,,nba,
+4/11/2018,gabe,42,40,under,over,202.5,L,-42,,nba,
+4/11/2018,gabe,40,40,knicks,cavs,14,W,40,,nba,
+4/11/2018,gabe,42,40,under,over,220,W,40,,nba,
+4/11/2018,gabe,40,40,76ers,bucks,-6.5,W,40,,nba,
+4/11/2018,gabe,42,40,under,over,220,L,-42,,nba,
+4/11/2018,gabe,40,40,timberwolves,nuggets,-3.5,W,40,,nba,
+4/11/2018,gabe,42,40,under,over,216,L,-42,,nba,
+4/11/2018,gabe,40,40,thunder,grizzlies,-16.5,L,-40,,nba,
+4/11/2018,gabe,42,40,under,over,212.5,L,-42,,nba,
+4/11/2018,gabe,40,40,spurs,pelicans,4,L,-40,,nba,
+4/11/2018,gabe,42,40,under,over,211.5,L,-40,,nba,
+4/11/2018,gabe,40,40,wizards,magic,-5.5,L,-40,,nba,
+4/11/2018,gabe,42,40,under,over,204.5,W,40,,nba,
+4/11/2018,gabe,40,40,celtics,nets,2,W,40,,nba,
+4/11/2018,gabe,42,40,under,over,206,L,-42,,nba,
+4/11/2018,gabe,40,40,bulls,pistons,4,L,-40,,nba,
+4/11/2018,gabe,40,40,under,over,212.5,W,40,,nba,
+4/11/2018,gabe,40,40,trailblazers,jazz,-3.5,W,40,,nba,
+4/11/2018,gabe,40,40,over,under,202,L,-40,,nba,
+4/11/2018,gabe,40,40,kings,rockets,3.5,W,40,,nba,
+4/11/2018,gabe,40,40,over,under,203,L,-40,,nba,
+4/11/2018,gabe,40,40,clippers,lakers,-2.5,L,-40,,nba,
+4/11/2018,gabe,40,40,over,under,217,L,-40,,nba,
+4/14/2018,gabe,50,50,spurs,warriors,7.5,L,-50,,nba,
+4/14/2018,gabe,53,50,under,over,206,W,50,,nba,
+4/14/2018,gabe,50,50,wizards,raptors,8,P,0,,nba,
+4/14/2018,gabe,53,50,under,over,212.5,L,-53,,nba,
+4/14/2018,gabe,50,50,76ers,heat,-6,W,50,,nba,
+4/14/2018,gabe,53,50,under,over,214.5,L,-53,,nba,
+4/14/2018,gabe,50,50,trailblazers,pelicans,-5,L,-50,,nba,
+4/14/2018,gabe,50,50,over,under,217.5,L,-50,,nba,
+4/15/2018,gabe,40,40,celtics,bucks,-4,W,40,,nba,
+4/15/2018,gabe,40,40,over,under,200.5,W,40,,nba,
+4/15/2018,gabe,40,40,cavs,pacers,-7,L,-40,,nba,
+4/15/2018,gabe,42,40,under,over,213,W,40,,nba,
+4/15/2018,gabe,40,40,thunder,jazz,-4,W,40,,nba,
+4/15/2018,gabe,42,40,under,over,205,L,-42,,nba,
+4/15/2018,gabe,40,40,rockets,timberwolves,-11,L,-40,,nba,
+4/15/2018,gabe,42,40,under,over,214.5,W,40,,nba,
+4/16/2018,gabe,50,50,heat,76ers,6.5,W,50,,nba,
+4/16/2018,gabe,52,50,under,over,215.5,L,-53,,nba,
+4/16/2018,gabe,50,50,warriors,spurs,-9.5,W,50,,nba,
+4/16/2018,gabe,50,50,over,under,205.5,W,50,,nba,
+4/17/2018,gabe,50,50,wizards,raptors,7,L,-50,,nba,
+4/17/2018,gabe,53,50,under,over,213.5,L,-53,,nba,
+4/17/2018,gabe,50,50,bucks,celtics,2,L,-50,,nba,
+4/17/2018,gabe,53,50,under,over,198.5,L,-53,,nba,
+4/17/2018,gabe,50,50,trailblazers,pelicans,-6,L,-50,,nba,
+4/17/2018,gabe,53,50,under,over,214,W,50,,nba,
+4/18/2018,gabe,50,50,cavs,pacers,-7,L,-50,,nba,
+4/18/2018,gabe,53,50,under,over,211.5,W,50,,nba,
+4/18/2018,gabe,50,50,thunder,jazz,-4.5,L,-50,,nba,
+4/18/2018,gabe,53,50,under,over,207.5,W,50,,nba,
+4/18/2018,gabe,50,50,timberwolves,rockets,10.5,L,-50,,nba,
+4/18/2018,gabe,53,50,under,over,214.5,W,50,,nba,
+4/19/2018,gabe,50,50,heat,76ers,2.5,L,-50,,nba,
+4/19/2018,gabe,53,50,under,over,214.5,L,-53,,nba,
+4/19/2018,gabe,50,50,trailblazers,pelicans,3.5,L,-50,,nba,
+4/19/2018,gabe,50,50,over,under,214.5,W,50,,nba,
+4/19/2018,gabe,50,50,spurs,warriors,3.5,L,-50,,nba,
+4/19/2018,gabe,53,50,under,over,206,L,-53,,nba,
+4/20/2018,gabe,75,75,cavs,pacers,1,L,-75,,nba,
+4/20/2018,gabe,79,75,under,over,208.5,W,75,,nba,
+4/20/2018,gabe,75,75,raptors,wizards,1.5,L,-75,,nba,
+4/20/2018,gabe,79,75,under,over,218,L,-79,,nba,
+4/20/2018,gabe,75,75,celtics,bucks,5.5,L,-75,,nba,
+4/20/2018,gabe,75,75,over,under,204.5,W,75,,nba,
+4/21/2018,gabe,50,50,76ers,heat,-4,P,0,,nba,
+4/21/2018,gabe,50,50,over,under,208,L,-50,,nba,
+4/21/2018,gabe,50,50,trailblazers,pelicans,7,L,-50,,nba,
+4/21/2018,gabe,53,50,under,over,217,L,-53,,nba,
+4/21/2018,gabe,50,50,rockets,timberwolves,-5.5,L,-50,,nba,
+4/21/2018,gabe,53,50,under,over,215.5,L,-53,,nba,
+4/21/2018,gabe,50,50,thunder,jazz,5,L,-50,,nba,
+4/21/2018,gabe,53,50,under,over,208.5,L,-50,,nba,
+4/22/2018,gabe,50,50,bucks,celtics,-5.5,L,-50,,nba,
+4/22/2018,gabe,50,50,over,under,203.5,W,50,,nba,
+4/22/2018,gabe,50,50,warriors,spurs,-6.5,L,-50,,nba,
+4/22/2018,gabe,50,50,over,under,205.5,L,-50,,nba,
+4/22/2018,gabe,50,50,raptors,wizards,-2,L,-50,,nba,
+4/22/2018,gabe,50,50,under,over,217,W,50,,nba,
+4/22/2018,gabe,50,50,cavs,pacers,-1,W,50,,nba,
+4/22/2018,gabe,50,50,over,under,203.5,W,50,,nba,
+4/23/2018,gabe,75,75,rockets,timberwolves,-6,W,75,,nba,
+4/23/2018,gabe,75,75,over,under,217,W,75,,nba,
+4/23/2018,gabe,75,75,thunder,jazz,4.5,L,-75,,nba,
+4/23/2018,gabe,79,75,under,over,208.5,L,-79,,nba,
+4/24/2018,gabe,75,75,bucks,celtics,4,L,-75,,nba,
+4/24/2018,gabe,79,75,under,over,203,W,75,,nba,
+4/24/2018,gabe,75,75,heat,76ers,10,L,-75,,nba,
+4/24/2018,gabe,79,75,under,over,215,W,75,,nba,
+4/24/2018,gabe,75,75,spurs,warriors,11.5,W,75,,nba,
+4/24/2018,gabe,75,75,over,under,203.5,L,-75,,nba,
+4/25/2018,gabe,75,75,wizards,raptors,7.5,L,-75,,nba,
+4/25/2018,gabe,75,75,over,under,215.5,L,-75,,nba,
+4/25/2018,gabe,75,75,pacers,cavs,6,W,75,,nba,
+4/25/2018,gabe,79,75,under,over,205.5,W,75,,nba,
+4/25/2018,gabe,75,75,rockets,timberwolves,-12,W,75,,nba,
+4/25/2018,gabe,79,75,under,over,216.5,L,-79,,nba,
+4/25/2018,gabe,75,75,thunder,jazz,-3.5,W,75,,nba,
+4/25/2018,gabe,79,75,under,over,207.5,W,75,,nba,
+4/26/2018,gabe,75,75,celtics,bucks,4.5,L,-75,,nba,
+4/26/2018,gabe,79,75,under,over,201,W,75,,nba,
+4/27/2018,gabe,75,75,raptors,wizards,1.5,W,75,,nba,
+4/27/2018,gabe,79,75,under,over,214.5,W,75,,nba,
+4/27/2018,gabe,75,75,cavs,pacers,1,L,-75,,nba,
+4/27/2018,gabe,79,75,under,over,204,L,-79,,nba,
+4/27/2018,gabe,75,75,thunder,jazz,6.5,W,75,,nba,
+4/27/2018,gabe,79,75,under,over,207.5,W,75,,nba,
+4/28/2018,gabe,75,75,pelicans,warriors,9.5,L,-75,,nba,
+4/28/2018,gabe,75,75,over,under,225.5,L,-75,,nba,
+4/28/2018,gabe,75,75,bucks,celtics,5,L,-75,,nba,
+4/28/2018,gabe,75,75,over,under,196.5,W,75,,nba,
+4/30/2018,gabe,75,75,76ers,celtics,-4.5,L,-75,,nba,
+4/30/2018,gabe,75,79,over,under,205,W,75,,nba,
+5/1/2018,gabe,75,75,raptors,cavs,-7,L,-75,,nba,
+5/1/2018,gabe,75,75,over,under,214,W,75,,nba,
+5/1/2018,gabe,75,75,warriors,pelicans,-10.5,L,-75,,nba,
+5/1/2018,gabe,75,75,over,under,228.5,W,75,,nba,
+5/2/2018,gabe,75,75,rockets,jazz,-11,L,-75,,nba,
+5/2/2018,gabe,75,75,over,under,204,W,75,,nba,
+5/3/2018,gabe,75,75,76ers,celtics,-4.5,L,-75,,nba,
+5/3/2018,gabe,79,75,under,over,206.5,L,-79,,nba,
+5/3/2018,gabe,75,75,raptors,cavs,-6.5,L,-75,,nba,
+5/3/2018,gabe,79,75,under,over,212.5,L,-79,,nba,
+5/4/2018,gabe,75,75,rockets,jazz,-4.5,W,75,,nba,
+5/4/2018,gabe,75,75,under,over,209,W,75,,nba,
+5/5/2018,gabe,75,75,raptors,cavs,4,W,75,,nba,
+5/5/2018,gabe,75,75,under,over,214.5,W,75,,nba,
+5/6/2018,gabe,75,75,jazz,rockets,5.5,L,-75,,nba,
+5/6/2018,gabe,79,75,under,over,209.5,W,75,,nba,
+5/7/2018,gabe,75,75,76ers,celtics,-6.5,W,75,,nba,
+5/7/2018,gabe,75,75,over,under,205,L,-75,,nba,
+5/7/2018,gabe,75,75,raptors,cavs,5,L,-75,,nba,
+5/7/2018,gabe,79,75,under,over,213.5,L,-79,,nba,
+5/8/2018,gabe,75,75,jazz,rockets,11.5,,,,nba,
+5/8/2018,gabe,79,75,under,over,207.5,,,,nba,
+5/8/2018,gabe,75,75,warriors,pelicans,-11.5,,,,nba,
+5/8/2018,gabe,79,75,under,over,228,,,,nba,
