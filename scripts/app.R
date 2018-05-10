@@ -23,21 +23,18 @@ source('read_in.R')
 # summary stats second 
 # add in more group
 
-ui <- dashboardPage(skin = 'red',
+ui <- dashboardPage(skin = 'black',
                     
                     
                     dashboardHeader(
                       title = "Betting with Gaybe",
-                      titleWidth = 300
+                      titleWidth = 200
                     ),
                     
-                    dashboardSidebar(width = 300,
+                    dashboardSidebar(width = 200,
                                      
                                      sidebarMenu(
-                                       menuItem('Overview',
-                                                icon = icon(''),
-                                                tabName = 'overview'),
-                                       menuItem('Betting summary statistics',
+                                       menuItem('NBA bets',
                                                 icon = icon('table'),
                                                 tabName = 'nba_stats'))),
                     dashboardBody(
@@ -45,17 +42,6 @@ ui <- dashboardPage(skin = 'red',
                         tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
                       ),
                       tabItems(
-                        tabItem(tabName = 'overview',
-                                fluidRow(h2('All NBA bets since Oct, 2017'), 
-                                         align = 'center'),
-                                fluidRow(column(12,
-                                                textOutput('total_text'))
-                                                ),
-                                fluidRow(column(6,
-                                                leafletOutput('cumulative_plot')),
-                                         column(6,
-                                                plotOutput('bet_plot')))
-                                ),
                         tabItem(tabName = "nba_stats",
                                 fluidRow(column(6,
                                                 selectInput('type_of_bet',
@@ -83,26 +69,33 @@ ui <- dashboardPage(skin = 'red',
                                                 uiOutput('line_or_ou'))),
                                 fluidRow(column(12,
                                                 uiOutput('over_under_picks')),
-                                         fluidRow(column(4,
+                                         fluidRow(column(6,
                                                          uiOutput('ben_box')),
-                                                  column(4,
-                                                         uiOutput('gabe_box')),
-                                                  column(4,
-                                                         uiOutput('both_box'))
-                                                 
+                                                  column(6,
+                                                         uiOutput('gabe_box'))),
+                                         fluidRow(
+                                           column(2),
+                                           column(8,
+                                                  uiOutput('both_box')),
+                                           column(2)
                                          )),
                                 tabsetPanel(
-                                  tabPanel('Table',
+                                  tabPanel('Overtime',
+                                           radioButtons('view_as',
+                                                        'View as',
+                                                        choices = c('Ben', 'Gabe'), 
+                                                        selected = 'Gabe',
+                                                        inline = TRUE),
                                            fluidRow(column(12,
-                                                           DT::dataTableOutput('nba_table')))
+                                                           plotlyOutput('nba_time_plot')))
                                            ),
-                                  tabPanel('Plot',
+                                  tabPanel('More visualizations',
                                            fluidRow(column(12,
-                                                           DT::dataTableOutput('nba_plot')
+                                                           plotlyOutput('nba_bar_plot')
                                            ))),
                                   
-                                  tabPanel('Map', 
-                                           leafletOutput('nba_map')))))))
+                                  tabPanel('Table', 
+                                           leafletOutput('nba_table')))))))
 
 
 
@@ -130,8 +123,8 @@ server <- function(input, output) {
   # get data for dates speccified
   get_sliders <- reactive({
     
-    type_of_bet <- 'The over under'
-    slider_input <- c(150, 250)
+    type_of_bet <- 'The spread'
+    slider_input <- c(-20, 20)
     date_picker <- c("2015-10-17", "2018-05-07")
     
     # get slider range
@@ -170,7 +163,7 @@ server <- function(input, output) {
     x <- x[, c('date', 'ben_picks', 'gabe_picks', 
                'line', 'outcome', 'money_outcome', 'under_dog', 'cum_sum')]
     colnames(x) <- c('Date', "Ben's picks", "Gabe's picks", "The spread/OU", 'Result', 'Money result', "Ben's team",
-                     'Cumulative winngings')
+                     'Cumulative winnings')
 
     
     return(x)
@@ -190,7 +183,7 @@ server <- function(input, output) {
                  'line', 'outcome', 'money_outcome', 'cum_sum')]
       
       colnames(x) <- c('Date', "Ben's over/under picks" ,"Ben's picks", "Gabe's picks", 
-                       "The spread/OU", 'Result', 'Money result', 'Cumulative winngings')
+                       "The spread/OU", 'Result', 'Money result', 'Cumulative winnings')
       
       
 
@@ -232,8 +225,12 @@ server <- function(input, output) {
     # filter type of bet input
     if (type_of_bet == 'The spread'){
       temp_data <- get_data_line()
+      type_of_bet <- 'spread'
+      
     } else if(type_of_bet =='The over under'){
       temp_data <- get_data_over_under()
+      type_of_bet <- 'over under'
+      
     }
     
     if(is.null(type_of_bet) | is.null(ben_team) | is.null(temp_data)) {
@@ -245,7 +242,7 @@ server <- function(input, output) {
       } 
       
       # criteria of under dog of over under 
-      if(type_of_bet != 'The over under'){
+      if(type_of_bet == 'spread'){
         sum_under_dog_or_under <- nrow(temp_data[temp_data$`Ben's team` == 'Under dog',])
         under_dog_under_text <-'# of underdog bets: '
         
@@ -265,32 +262,38 @@ server <- function(input, output) {
         
       }
       #edit type of bet
-      type_of_bet <- unlist(strsplit(type_of_bet, ' ',fixed = TRUE))[2]
-      
       mean_line_ou <- round(mean(temp_data$`The spread/OU`, na.rm = TRUE),2)
       total_w <- nrow(temp_data[temp_data$Result == 'W',])
       total_l <- nrow(temp_data[temp_data$Result == 'L',])
       total_games <- total_w + total_l
       mean_winnings<- round(mean(temp_data$`Money result`, na.rm = TRUE), 2)
     
+      # get custom title 
+      if(ben_team == 'All'){
+        ben_sub <- "For all teams"
+      } else {
+        ben_sub <-paste0("When Ben chooses the ", ben_team)
+      }
       
       valueBox(
         paste0("Ben's stats"), 
-        HTML(paste0("Average ", type_of_bet, " : ", mean_line_ou,
-                    "<br/> Team chosen: ", ben_team,
+        HTML(paste0(ben_sub,
+                    "<br/> Average ", type_of_bet, " : ", mean_line_ou,
                     "<br/> Games played: ", total_games,
                     "<br/> Wins: ", total_w,
                     "<br/> Losses: ", total_l,
                     "<br/>", total_string, ": ", total_winnings,' $',
                     "<br/>", mean_string, ": ", mean_winnings,' $',
                     "<br/>", under_dog_under_text,  sum_under_dog_or_under)), 
-        color = 'olive',
+        color = 'navy',
         width = 10
       )
     
     }
   })
   
+  
+  # HERE Make sure this can be transferred to gab e box
   output$gabe_box <- renderUI({
     
     
@@ -304,8 +307,12 @@ server <- function(input, output) {
     # filter type of bet input
     if (type_of_bet == 'The spread'){
       temp_data <- get_data_line()
+      type_of_bet <- 'spread'
+      
     } else if(type_of_bet =='The over under'){
       temp_data <- get_data_over_under()
+      type_of_bet <- 'over under'
+      
     }
     
     if(is.null(type_of_bet) | is.null(gabe_team) | is.null(temp_data)) {
@@ -313,11 +320,10 @@ server <- function(input, output) {
     } else {
       if (gabe_team != 'All'){
         temp_data <- temp_data %>% filter(`Gabe's picks` %in% gabe_team)
-        
       } 
-      
+      #HERE
       # criteria of under dog of over under 
-      if(type_of_bet != 'The over under'){
+      if(type_of_bet == 'spread'){
         sum_under_dog_or_under <- nrow(temp_data[temp_data$`Ben's team` != 'Under dog',])
         under_dog_under_text <-'# of underdog bets: '
         
@@ -327,7 +333,10 @@ server <- function(input, output) {
         
       }
       
-      total_winnings <- sum(temp_data$`Money result`)
+      # multiply by -1 to get the inverse
+      temp_data$`Money result gabe` <- (temp_data$`Money result`)*(-1)
+      
+      total_winnings <- sum(temp_data$`Money result gabe`)
       if(total_winnings < 0){
         total_string <- 'Net Losses'
         mean_string <- 'Average losses per bet'
@@ -337,33 +346,114 @@ server <- function(input, output) {
         
       }
       #edit type of bet
-      type_of_bet <- unlist(strsplit(type_of_bet, ' ',fixed = TRUE))[2]
-      
       mean_line_ou <- round(mean(temp_data$`The spread/OU`, na.rm = TRUE),2)
-      total_w <- nrow(temp_data[temp_data$Result == 'W',])
-      total_l <- nrow(temp_data[temp_data$Result == 'L',])
+      total_w <- nrow(temp_data[temp_data$Result == 'L',])
+      total_l <- nrow(temp_data[temp_data$Result == 'W',])
       total_games <- total_w + total_l
-      mean_winnings<- round(mean(temp_data$`Money result`, na.rm = TRUE), 2)
+      mean_winnings<- round(mean(temp_data$`Money result gabe`, na.rm = TRUE), 2)
       
+      # get custom title 
+      if(gabe_team == 'All'){
+        gabe_sub <- "For all teams"
+      } else {
+        gabe_sub <-paste0("When Gabe chooses the ", gabe_team)
+      }
       
       valueBox(
-        paste0("gabe's stats"), 
-        HTML(paste0("Average ", type_of_bet, " : ", mean_line_ou,
-                    "<br/> Team chosen: ", gabe_team,
+        paste0("Gabe's stats"), 
+        HTML(paste0(gabe_sub,
+                    "<br/> Average ", type_of_bet, " : ", mean_line_ou,
                     "<br/> Games played: ", total_games,
                     "<br/> Wins: ", total_w,
                     "<br/> Losses: ", total_l,
                     "<br/>", total_string, ": ", total_winnings,' $',
                     "<br/>", mean_string, ": ", mean_winnings,' $',
                     "<br/>", under_dog_under_text,  sum_under_dog_or_under)), 
-        color = 'olive',
+        color = 'blue',
         width = 10
       )
       
     }
   })
   
-
+  # Valid colors are: red, yellow, aqua, blue, light-blue, green, navy, teal, olive, lime, orange, fuchsia, purple, maroon, black.
+  
+  # if the teams chosen match both
+  output$both_box <- renderUI({
+   
+    ben_team <- 'Cavs'
+    gabe_team <- 'Pistons'
+    type_of_bet <- 'The spread'
+    type_of_bet <- input$type_of_bet
+    ben_team <- input$ben_picks
+    gabe_team <- input$gabe_picks
+    
+    if(is.null(ben_team) | is.null(gabe_team) | ben_team == 'All' | gabe_team == 'All') {
+      NULL
+    } else {
+    
+      # filter type of bet input
+      if (type_of_bet == 'The spread'){
+        temp_data <- get_data_line()
+        type_of_bet <- 'spread'
+        
+      } else if(type_of_bet =='The over under'){
+        temp_data <- get_data_over_under()
+        type_of_bet <- 'over under'
+        
+      }
+      
+      # see if data exists for the criteria
+      temp <- temp_data %>% filter(`Ben's picks` %in% ben_team) %>% filter(`Gabe's picks` %in% gabe_team)
+      
+      if(nrow(temp) > 0) {
+        
+        # get temp discriptive objects
+      
+        matchup_teams <- paste0(ben_team, ' vs ', gabe_team)
+        num_games <- nrow(temp)
+        mean_line_ou <- round(mean(temp_data$`The spread/OU`, na.rm = TRUE),2)
+        ben_w <- nrow(temp[temp$Result == 'W',])
+        gabe_w <- nrow(temp[temp$Result == 'L',])
+        num_push <- nrow(temp[temp$Result == 'P',])
+        
+        if(ben_w > gabe_w) {
+          win_text <- 'Total winnings for Ben: '
+          
+          total_winnings <- sum(temp$`Money result`)
+          
+        } else {
+          win_text <- 'Total winnings for Gabe: '
+          
+          temp$`Money result gabe` <- (temp$`Money result`)*(-1)
+          total_winnings <- sum(temp$`Money result gabe`)
+          
+        }
+       
+        
+        valueBox(
+          paste0(matchup_teams), 
+          HTML(paste0("When Ben chooses the ", ben_team ," and Gabe chooses the ", gabe_team, 
+                      "<br/> Number of times this has happened = ", num_games,
+                      "<br/> The Average ", type_of_bet, "when this happens is ", mean_line_ou,
+                      "<br/> Ben has won this matchup ", ben_w, ' times ',
+                      "<br/> Gabe has won this matchup ", gabe_w,' times ',
+                      "<br/> Number of ties ", num_push,
+                      "<br/>", win_text, total_winnings, '$')), 
+          color = 'red',
+          width = 10
+        )
+      } else {
+        return(NULL)
+      }
+     
+      
+    }
+      
+  
+  })
+  
+  # Valid colors are: red, yellow, aqua, blue, light-blue, green, navy, teal, olive, lime, orange, fuchsia, purple, maroon, black.
  
   # # create full data set from the other two
   # get_data_all <- reactive({
@@ -379,40 +469,198 @@ server <- function(input, output) {
   #   
   # })
   # 
-  output$nba_table <- renderDataTable({
+  output$nba_time_plot <- renderPlotly({
     
-    type_of_bet <- 'The spread'
-    ben_team <- 'All'
-    gabe_team <- 'All'
-    temp_data <- x
+   
     # get inputs
     type_of_bet <- input$type_of_bet
     ben_team <- input$ben_picks
     gabe_team <-input$gabe_picks
-
-    # filter type of bet input
-    if (type_of_bet == 'The spread'){
-      temp_data <- get_data_line()
-    } else if(type_of_bet =='The over under'){
-      temp_data <- get_data_over_under()
-    }
+    view_as <- input$view_as
     
-    if (ben_team == 'All' & gabe_team == 'All'){
-      criteria_cumulative_winnings <- cumsum(temp_data$`Money result`)
-      temp_data
-    } else if (ben_team == 'All' & gabe_team != 'All') {
-      temp_data <- temp_data %>% filter(`Gabe's picks` %in% gabe_team)
-    } else if (ben_team != 'All' & gabe_team == 'All') {
-      temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team)
+    if(is.null(type_of_bet) | is.null(ben_team) | is.null(gabe_team) | is.null(view_as)) {
+      g <-  ggplot() + 
+        theme_base() +
+        labs(title = 'You must select a location plot')
+      
+      g_plot <- plotly::ggplotly(g, tooltip = 'text') %>% config(displayModeBar = F) %>%
+        layout(showlegend = F)
+      return(g_plot)
+      
+      
     } else {
-      temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team) %>% filter(`Gabe's picks` %in% gabe_team)
+      
+      if(view_as != 'Ben'){
+        
+        if(type_of_bet == 'The spread'){
+          temp_data <- get_data_line()
+          temp_data$`The spread/OU` <- temp_data$`The spread/OU`*(-1)
+        } else {
+          temp_data <- get_data_over_under()
+        }
+        
+        # get rid of cumulative winnings column
+        temp_data$`Cumulative winngings` <- NULL
+        # change data to fit gabe
+        temp_data$`Money result` <- temp_data$`Money result`*(-1)
+        # reverse results 
+        temp_data$Result <- ifelse(temp_data$Result == 'W', 'L', 
+                                   ifelse(temp_data$Result == 'L', 'W', temp_data$Result))
+        
+        # select team
+        if(gabe_team != 'All'){
+          temp_data <- temp_data %>% filter(`Gabe's picks` %in% gabe_team)
+          temp_data$`Cumulative winnings` <- cumsum(temp_data$`Money result`)
+        } else {
+          temp_data$`Cumulative winnings` <- cumsum(temp_data$`Money result`)
+        }
+        
+        # subset to necessary columns 
+        temp_data <- temp_data[, c('Date', "Ben's picks","Gabe's picks", "The spread/OU", "Cumulative winnings")]
+        temp_data <- as.data.frame(temp_data)
+        
+        # create variable to id game 
+        temp_data$game <- paste0(temp_data$`Gabe's picks`, ' vs ', temp_data$`Ben's picks`)
+        temp_data$`Ben's picks` <- NULL
+        
+        
+        # plot data with points, line, and maybe smooth
+        g <- ggplot(data = temp_data,
+                    aes(x = Date,
+                        y = `Cumulative winnings`,
+                        group = 1,
+                        text = paste0('Cumulative winnings at ', Date, ' = ', `Cumulative winnings`,
+                                      '<br> Game: ', game))) + 
+          geom_point(size = 3, alpha = 0.5, col = 'blue') +
+          geom_smooth(size = 1, col = 'darkgrey', se = FALSE, linetype = 'dash', alpha = 0.4) +
+          labs(x = '', y = '$', 
+               title = 'Gabe cumulative winnings over time')
+        
+        
+        g_plot <- plotly::ggplotly(g, tooltip = 'text') %>% config(displayModeBar = F) %>%
+          layout(showlegend = F)
+      } else {
+        
+        if(type_of_bet == 'The spread'){
+          temp_data <- get_data_line()
+        } else {
+          temp_data <- get_data_over_under()
+        }
+        
+        # get rid of cumulative winnings column
+        temp_data$`Cumulative winngings` <- NULL
+        
+        # select team
+        if(ben_team != 'All'){
+          temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team)
+          temp_data$`Cumulative winnings` <- cumsum(temp_data$`Money result`)
+        } else {
+          temp_data$`Cumulative winnings` <- cumsum(temp_data$`Money result`)
+        }
+        
+        # subset to necessary columns 
+        temp_data <- temp_data[, c('Date', "Ben's picks","Gabe's picks", "The spread/OU", "Cumulative winnings")]
+        temp_data <- as.data.frame(temp_data)
+        
+    
+        # create variable to id game 
+        temp_data$game <- paste0(temp_data$`Ben's picks`, ' vs ', temp_data$`Gabe's picks`)
+        temp_data$`Gabe's picks` <- NULL
+        
+        
+        # plot data with points, line, and maybe smooth
+        g <- ggplot(data = temp_data,
+                    aes(x = Date,
+                        y = `Cumulative winnings`,
+                        group = 1,
+                        text = paste0('Cumulative winnings at ', Date, ' = ', `Cumulative winnings`,
+                                      '<br> Game: ', game))) + 
+          geom_point(size = 3, alpha = 0.5, col = 'blue') +
+          geom_smooth(size = 1, col = 'darkgrey', se = FALSE, linetype = 'dash', alpha = 0.4) +
+          labs(x = '', y = '$', 
+               title = 'Ben cumulative winnings over time')
+        
+        
+        g_plot <- plotly::ggplotly(g, tooltip = 'text') %>% config(displayModeBar = F) %>%
+          layout(showlegend = F)
+        
+        return(g_plot)
+        
+        
+      }
     }
+      
     
-    
+   
     
   })
   
-
+  # output$nba_bar_plot <- renderPlotly({
+  #   
+  #   type_of_bet <- 'The spread'
+  #   ben_team <- 'All'
+  #   gabe_team <- 'All'
+  #   temp_data <- x
+  #   # get inputs
+  #   type_of_bet <- input$type_of_bet
+  #   ben_team <- input$ben_picks
+  #   gabe_team <-input$gabe_picks
+  #   
+  #   # filter type of bet input
+  #   if (type_of_bet == 'The spread'){
+  #     temp_data <- get_data_line()
+  #   } else if(type_of_bet =='The over under'){
+  #     temp_data <- get_data_over_under()
+  #   }
+  #   
+  #   if (ben_team == 'All' & gabe_team == 'All'){
+  #     temp_data$cum_sum<- cumsum(temp_data$`Money result`)
+  #   } else if (ben_team == 'All' & gabe_team != 'All') {
+  #     temp_data <- temp_data %>% filter(`Gabe's picks` %in% gabe_team)
+  #   } else if (ben_team != 'All' & gabe_team == 'All') {
+  #     temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team)
+  #   } else {
+  #     temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team) %>% filter(`Gabe's picks` %in% gabe_team)
+  #   }
+  #   
+  #   
+  #   
+  # })
+  
+  
+# 
+#   output$nba_table <- renderDataTable({
+#     
+#     type_of_bet <- 'The spread'
+#     ben_team <- 'All'
+#     gabe_team <- 'All'
+#     temp_data <- x
+#     # get inputs
+#     type_of_bet <- input$type_of_bet
+#     ben_team <- input$ben_picks
+#     gabe_team <-input$gabe_picks
+#     
+#     # filter type of bet input
+#     if (type_of_bet == 'The spread'){
+#       temp_data <- get_data_line()
+#     } else if(type_of_bet =='The over under'){
+#       temp_data <- get_data_over_under()
+#     }
+#     
+#     if (ben_team == 'All' & gabe_team == 'All'){
+#       temp_data$cum_sum<- cumsum(temp_data$`Money result`)
+#     } else if (ben_team == 'All' & gabe_team != 'All') {
+#       temp_data <- temp_data %>% filter(`Gabe's picks` %in% gabe_team)
+#     } else if (ben_team != 'All' & gabe_team == 'All') {
+#       temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team)
+#     } else {
+#       temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team) %>% filter(`Gabe's picks` %in% gabe_team)
+#     }
+#     
+#     
+#     
+#   })
+#   
 
   
 }
