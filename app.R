@@ -83,19 +83,28 @@ ui <- dashboardPage(skin = 'black',
                                   tabPanel('Overtime',
                                            radioButtons('view_as',
                                                         'View as',
-                                                        choices = c('Ben', 'Gabe'), 
-                                                        selected = 'Gabe',
+                                                        choices = c('Ben', 'Gabe the Cuck'), 
+                                                        selected = 'Ben',
                                                         inline = TRUE),
                                            fluidRow(column(12,
                                                            plotlyOutput('nba_time_plot')))
                                            ),
                                   tabPanel('More visualizations',
+                                           fluidRow(column(2,
+                                                           checkboxInput('view_as_2',
+                                                                        'View as Gabe the Cuck',
+                                                                        value = FALSE)),
+                                                    column(3,
+                                                           checkboxInput(inputId = 'show_spread',
+                                                                         label = 'View the average line or O/U by team',
+                                                                         value = FALSE)),
+                                                    br(), br(),
+                                                    
                                            fluidRow(column(12,
-                                                           plotlyOutput('nba_bar_plot')
-                                           ))),
-                                  
-                                  tabPanel('Table', 
-                                           leafletOutput('nba_table')))))))
+                                                           br(), 
+                                                           plotlyOutput('nba_bar_plot',height = '600px')))
+                                         
+                                           )) )))))
 
 
 
@@ -490,6 +499,7 @@ server <- function(input, output) {
       
     } else {
       
+      
       if(view_as != 'Ben'){
         
         if(type_of_bet == 'The spread'){
@@ -497,9 +507,6 @@ server <- function(input, output) {
           temp_data$`The spread/OU` <- temp_data$`The spread/OU`*(-1)
         } else {
           temp_data <- get_data_over_under()
-        }
-        if(nrow(temp_data) == 0){
-          return(NULL)
         }
         
         # get rid of cumulative winnings column
@@ -526,6 +533,12 @@ server <- function(input, output) {
         temp_data$game <- paste0(temp_data$`Gabe's picks`, ' vs ', temp_data$`Ben's picks`)
         temp_data$`Ben's picks` <- NULL
         
+        # assign value to alpha_point based on if all teams were selected
+        if(length(unique(temp_data$`Gabe's picks`)) == 1) {
+          point_alpha = 0.9
+        } else {
+          point_alpha = 0.5
+        }
         
         # plot data with points, line, and maybe smooth
         g <- ggplot(data = temp_data,
@@ -534,10 +547,15 @@ server <- function(input, output) {
                         group = 1,
                         text = paste0('Cumulative winnings at ', Date, ' = ', `Cumulative winnings`,
                                       '<br> Game: ', game))) + 
-          geom_point(size = 3, alpha = 0.5, col = 'blue') +
+          geom_point(size = 3, alpha = point_alpha, col = 'purple') +
           geom_smooth(size = 1, col = 'darkgrey', se = FALSE, linetype = 'dash', alpha = 0.4) +
           labs(x = '', y = '$', 
-               title = 'Gabe cumulative winnings over time')
+               title = 'Gabe cumulative winnings over time') +
+          theme_tufte(base_size = 14) + 
+          theme(
+            panel.background = element_rect(fill = "white"),
+            panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                            colour = "black"))
         
         
         g_plot <- plotly::ggplotly(g, tooltip = 'text') %>% config(displayModeBar = F) %>%
@@ -548,6 +566,10 @@ server <- function(input, output) {
           temp_data <- get_data_line()
         } else {
           temp_data <- get_data_over_under()
+        }
+        
+        if(nrow(temp_data) == 0){
+          return(NULL)
         }
         
         # get rid of cumulative winnings column
@@ -570,6 +592,13 @@ server <- function(input, output) {
         temp_data$game <- paste0(temp_data$`Ben's picks`, ' vs ', temp_data$`Gabe's picks`)
         temp_data$`Gabe's picks` <- NULL
         
+        # assign value to alpha_point based on if all teams were selected
+        if(length(unique(temp_data$`Ben's picks`)) == 1) {
+          point_alpha = 0.9
+        } else {
+          point_alpha = 0.5
+        }
+        
         
         # plot data with points, line, and maybe smooth
         g <- ggplot(data = temp_data,
@@ -578,13 +607,18 @@ server <- function(input, output) {
                         group = 1,
                         text = paste0('Cumulative winnings at ', Date, ' = ', `Cumulative winnings`,
                                       '<br> Game: ', game))) + 
-          geom_point(size = 3, alpha = 0.5, col = 'blue') +
+          geom_point(size = 3, alpha = point_alpha, col = 'lightblue') +
           geom_smooth(size = 1, col = 'darkgrey', se = FALSE, linetype = 'dash', alpha = 0.4) +
           labs(x = '', y = '$', 
-               title = 'Ben cumulative winnings over time')
+               title = 'Ben cumulative winnings over time') +
+          theme_tufte(base_size = 14) + 
+          theme(
+            panel.background = element_rect(fill = "black"),
+            panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                            colour = "white"))
+
         
-        
-        g_plot <- plotly::ggplotly(g, tooltip = 'text') %>% config(displayModeBar = F) %>%
+         g_plot <- plotly::ggplotly(g, tooltip = 'text') %>% config(displayModeBar = F) %>%
           layout(showlegend = F)
         
         return(g_plot)
@@ -598,38 +632,200 @@ server <- function(input, output) {
     
   })
   
-  # output$nba_bar_plot <- renderPlotly({
-  #   
-  #   type_of_bet <- 'The spread'
-  #   ben_team <- 'All'
-  #   gabe_team <- 'All'
-  #   temp_data <- x
-  #   # get inputs
-  #   type_of_bet <- input$type_of_bet
-  #   ben_team <- input$ben_picks
-  #   gabe_team <-input$gabe_picks
-  #   
-  #   # filter type of bet input
-  #   if (type_of_bet == 'The spread'){
-  #     temp_data <- get_data_line()
-  #   } else if(type_of_bet =='The over under'){
-  #     temp_data <- get_data_over_under()
-  #   }
-  #   
-  #   if (ben_team == 'All' & gabe_team == 'All'){
-  #     temp_data$cum_sum<- cumsum(temp_data$`Money result`)
-  #   } else if (ben_team == 'All' & gabe_team != 'All') {
-  #     temp_data <- temp_data %>% filter(`Gabe's picks` %in% gabe_team)
-  #   } else if (ben_team != 'All' & gabe_team == 'All') {
-  #     temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team)
-  #   } else {
-  #     temp_data <- temp_data %>% filter(`Ben's picks` %in% ben_team) %>% filter(`Gabe's picks` %in% gabe_team)
-  #   }
-  #   
-  #   
-  #   
-  # })
   
+
+  
+  output$nba_bar_plot <- renderPlotly({
+    
+    temp_data <- x
+    type_of_bet <- 'The spread'
+    ben_team <- 'All'
+    gabe_team <- 'All'
+    show_spread <- TRUE
+    
+    # get inputs
+    type_of_bet <- input$type_of_bet
+    ben_team <- input$ben_picks
+    gabe_team <-input$gabe_picks
+    view_as_2 <- input$view_as_2
+    show_spread <- input$show_spread
+    
+
+    if(is.null(type_of_bet) | is.null(ben_team) | is.null(gabe_team) | is.null(view_as_2)) {
+      g <-  ggplot() + 
+        theme_base() +
+        labs(title = 'You must select a location plot')
+      
+      g_plot <- plotly::ggplotly(g, tooltip = 'text') %>% config(displayModeBar = F) %>%
+        layout(showlegend = F)
+      return(g_plot)
+      
+      
+    } else {
+
+      if(type_of_bet == 'The spread'){
+        temp_data <- get_data_line()
+      } else {
+        temp_data <- get_data_over_under()
+      }
+      
+      if(nrow(temp_data) == 0){
+        return(NULL)
+      }
+      
+      # get rid of cumulative winnings column
+      temp_data$`Cumulative winngings` <- NULL
+      
+      # split into two data sets and group by team to get by team stats for each person. then rejoin
+      temp_ben <- temp_data[, c('Date', "Ben's picks", "Result", "Money result", "The spread/OU" )]
+      temp_gabe <- temp_data[, c('Date', "Gabe's picks", "Result", "Money result", "The spread/OU" )]
+      
+      # invert gabe data so it matches from his perspective 
+      temp_gabe$`Money result` <- temp_gabe$`Money result`*(-1)
+      # reverse results 
+      temp_gabe$Result <- ifelse(temp_gabe$Result == 'W', 'L', 
+                                 ifelse(temp_gabe$Result == 'L', 'W', temp_gabe$Result))
+      
+      if(type_of_bet == 'The spread') {
+        temp_gabe$`The spread/OU` <-  temp_gabe$`The spread/OU`*(-1)
+      }
+      
+      # group by team get sum of money result and percent wins
+      temp_gabe <- temp_gabe %>%
+        group_by(`Gabe's picks`) %>%
+        summarise(total_money = sum(`Money result`, na.rm = T),
+                  mean_spread_ou = round(mean(`The spread/OU`, na.rm = T), 2),
+                  sum_w = sum(Result == 'W'),
+                  sum_l = sum(Result == 'L'),
+                  counts = n(), 
+                  per_w = round((sum_w/counts)*100, 2))
+      
+      # same for ben data
+      temp_ben <- temp_ben %>%
+        group_by(`Ben's picks`) %>%
+        summarise(total_money = sum(`Money result`, na.rm = T),
+                  mean_spread_ou = round(mean(`The spread/OU`, na.rm = T), 2),
+                  sum_w = sum(Result == 'W'),
+                  sum_l = sum(Result == 'L'),                  
+                  counts = n(), 
+                  per_w = round((sum_w/counts)*100, 2))
+      
+      tick_font <- list(
+        family = "Ubuntu",
+        size = 9,
+        color = "black"
+      )
+
+      # condition for showing spread of ou
+      if(show_spread) {
+        temp_ben$per_w <- temp_ben$mean_spread_ou
+        temp_gabe$per_w <- temp_gabe$mean_spread_ou
+        
+        spread_char <- gsub('The', '', type_of_bet)
+        title_char <- paste0('Average ', spread_char)
+        if(!view_as_2) {
+          
+          plot_title <- paste0(title_char, ' by team for Ben on ', type_of_bet, ' bets')
+          
+          g  <- plot_ly(temp_ben, x = ~per_w, y = ~reorder(`Ben's picks`, per_w), 
+                        type = 'bar', orientation = 'h',
+                        marker = list(color = 'rgb(44, 119, 226, 0.6)',
+                                      line = list(color = 'black', width = 1)),
+                        text =  paste0('$ winnings = ', temp_ben$total_money,
+                                       '<br> # of games = ', temp_ben$counts,
+                                       '<br> overall record: ', temp_ben$sum_w, ' - ', temp_ben$sum_l)) %>%
+            layout(title = plot_title,
+                   yaxis = list(title = '', showgrid = FALSE, showline = TRUE, showticklabels = TRUE,tickfont = tick_font),
+                   xaxis = list(title = '', zeroline = FALSE, showline = FALSE, showticklabels = TRUE, showgrid = TRUE)) %>%
+            add_annotations(xref = 'x1', yref = 'y',
+                            x = temp_ben$per_w,  y = temp_ben$`Ben's picks`,
+                            text = paste(temp_ben$per_w, ' points'),
+                            font = list(family = 'Ubuntu', size = 10, color = 'black'),
+                            showarrow = FALSE)
+          
+          
+        } else {
+          
+          plot_title <- paste0(title_char, ' by team for Gabe on ', type_of_bet, ' bets')
+          
+          g  <- plot_ly(temp_gabe, x = ~per_w, y = ~reorder(`Gabe's picks`, per_w), 
+                        type = 'bar', orientation = 'h',
+                        marker = list(color = 'rgb(44, 119, 226, 0.6)',
+                                      line = list(color = 'black', width = 1)),
+                        text = paste0('$ winnings = ', temp_gabe$total_money, '$',
+                                      '<br> # of games = ', temp_gabe$counts,
+                                      '<br> overall record: ', temp_gabe$sum_w, ' - ', temp_gabe$sum_l)) %>%
+            layout(title = plot_title,
+                   yaxis = list(title = '',showgrid = FALSE, showline = TRUE, showticklabels = TRUE, tickfont = tick_font),
+                   xaxis = list(title = '', zeroline = FALSE, showline = FALSE, showticklabels = TRUE,showgrid = TRUE)) %>%
+            add_annotations(xref = 'x1', yref = 'y',
+                            x = temp_gabe$per_wd,  y = temp_gabe$`Gabe's picks`,
+                            text = paste(temp_ben$per_w, ' points'),
+                            font = list(family = 'Ubuntu', size = 10, color = 'black'),
+                            showarrow = FALSE)
+          
+          
+        }
+        
+        
+      } else {
+        title_char <- 'Winning %'
+        
+        if(!view_as_2) {
+          
+          plot_title <- paste0(title_char, ' by team for Ben on ', type_of_bet, ' bets')
+          
+          g  <- plot_ly(temp_ben, x = ~per_w, y = ~reorder(`Ben's picks`, per_w), 
+                        type = 'bar', orientation = 'h',
+                        marker = list(color = 'rgb(44, 119, 226, 0.6)',
+                                      line = list(color = 'black', width = 1)),
+                        text =  paste0('$ winnings = ', temp_ben$total_money, '$',
+                                       '<br> # of games = ', temp_ben$counts,
+                                       '<br> overall record: ', temp_ben$sum_w, ' - ', temp_ben$sum_l)) %>%
+            layout(title = plot_title,
+                   yaxis = list(title = '', showgrid = FALSE, showline = TRUE, showticklabels = TRUE,tickfont = tick_font),
+                   xaxis = list(title = '', zeroline = FALSE, showline = FALSE, showticklabels = TRUE, showgrid = TRUE)) %>%
+            add_annotations(xref = 'x1', yref = 'y',
+                            x = temp_ben$per_w + 2,  y = temp_ben$`Ben's picks`,
+                            text = paste(round(temp_ben$per_w, 2), '%'),
+                            font = list(family = 'Ubuntu', size = 10, color = 'black'),
+                            showarrow = FALSE)
+          
+          
+        } else {
+          
+          plot_title <- paste0(title_char, ' by team for Gabe on ', type_of_bet, ' bets')
+          
+          g  <- plot_ly(temp_gabe, x = ~per_w, y = ~reorder(`Gabe's picks`, per_w), 
+                        type = 'bar', orientation = 'h',
+                        marker = list(color = 'rgb(44, 119, 226, 0.6)',
+                                      line = list(color = 'black', width = 1)),
+                        text = paste0('$ winnings = ', temp_gabe$total_money, '$',
+                                      '<br> # of games = ', temp_gabe$counts,
+                                      '<br> overall record: ', temp_gabe$sum_w, ' - ', temp_gabe$sum_l)) %>%
+            layout(title = plot_title,
+                   yaxis = list(title = '',showgrid = FALSE, showline = TRUE, showticklabels = TRUE, tickfont = tick_font),
+                   xaxis = list(title = '', zeroline = FALSE, showline = FALSE, showticklabels = TRUE,showgrid = TRUE)) %>%
+            add_annotations(xref = 'x1', yref = 'y',
+                            x = temp_gabe$per_w + 2,  y = temp_gabe$`Gabe's picks`,
+                            text = paste(round(temp_gabe$per_w, 2), '%'),
+                            font = list(family = 'Ubuntu', size = 10, color = 'black'),
+                            showarrow = FALSE)
+          
+          
+        }
+        
+      }
+      
+  
+     
+      return(g)
+    }
+
+  })
+  
+  
+ 
   
 # 
 #   output$nba_table <- renderDataTable({

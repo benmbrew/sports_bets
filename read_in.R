@@ -11,9 +11,9 @@ library(readr)
 # read in 2017 data
 
 if('nba_dat.RData' %in% dir('../data')){
-  load('../data/nba_dat.RData')
+  load('data/nba_dat.RData')
 } else {
-  dat <- read_csv('../data/bets_2017.csv')
+  dat <- read_csv('data/bets_2017.csv')
   
   # remove unneeded columns 
   dat$person <- dat$settled <-  NULL
@@ -84,7 +84,7 @@ if('nba_dat.RData' %in% dir('../data')){
 
   
   
-  save.image('../data/nba_dat.RData')
+  save.image('data/nba_dat.RData')
   # ggplot(dat, aes(date, cum_sum)) + geom_point(stat= 'identity') +geom_smooth()
   
   
