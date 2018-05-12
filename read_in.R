@@ -10,7 +10,7 @@ library(readr)
 #########
 # read in 2017 data
 
-if('nba_dat.RData' %in% dir('../data')){
+if('nba_dat.RData' %in% dir('data')){
   load('data/nba_dat.RData')
 } else {
   dat <- read_csv('data/bets_2017.csv')

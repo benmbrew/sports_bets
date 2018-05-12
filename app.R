@@ -45,7 +45,7 @@ ui <- dashboardPage(skin = 'black',
                         tabItem(tabName = "nba_stats",
                                 fluidRow(column(6,
                                                 selectInput('type_of_bet',
-                                                            "Type of bet",
+                                                            "Type of bet (as Ben)",
                                                             choices = c('The spread', 'The over under'))),
                                          column(6,
                                                 dateRangeInput('date_picker',
@@ -132,8 +132,8 @@ server <- function(input, output) {
   # get data for dates speccified
   get_sliders <- reactive({
     
-    type_of_bet <- 'The spread'
-    slider_input <- c(-20, 20)
+    type_of_bet <- 'The over under'
+    slider_input <- c(100, 300)
     date_picker <- c("2015-10-17", "2018-05-07")
     
     # get slider range
@@ -637,12 +637,12 @@ server <- function(input, output) {
   
   output$nba_bar_plot <- renderPlotly({
     
-    temp_data <- x
-    type_of_bet <- 'The spread'
-    ben_team <- 'All'
-    gabe_team <- 'All'
-    show_spread <- TRUE
-    
+    # temp_data <- x
+    # type_of_bet <- 'The spread'
+    # ben_team <- 'All'
+    # gabe_team <- 'All'
+    # show_spread <- TRUE
+    # 
     # get inputs
     type_of_bet <- input$type_of_bet
     ben_team <- input$ben_picks
@@ -672,6 +672,11 @@ server <- function(input, output) {
       if(nrow(temp_data) == 0){
         return(NULL)
       }
+      
+      # remove over and under as a choice 
+      temp_data <- temp_data[!grepl('Over|Under', temp_data$`Gabe's picks`),]
+      temp_data <- temp_data[!grepl('Over|Under', temp_data$`Ben's picks`),]
+      
       
       # get rid of cumulative winnings column
       temp_data$`Cumulative winngings` <- NULL
